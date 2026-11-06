@@ -1,0 +1,6 @@
+# Tüm arama motorlarına izin ver
+User-agent: *
+Allow: /
+
+# Sitemap dosyanızın yolunu mutlaka belirtin
+Sitemap: https://www.serhatnehir.com.tr/sitemap.xml

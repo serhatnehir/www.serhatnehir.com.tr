@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html class="wide" lang="tr">
+  <head>
+    <title>Git ve GitHub | Serhat Nehir</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.serhatnehir.com.tr/makalelerim/git_ve_github.html">
+    <meta name="description" content="Git ve GitHub: Dağıtık versiyon kontrol mimarisi, snapshot yapısı, temel ve ileri seviye Git komutları (rebase, cherry-pick, reflog, bisect), GitHub Actions CI/CD ve kurumsal dallanma stratejileri - Serhat Nehir" />
+    <!-- Open Graph / Sosyal Medya Paylaşım Etiketleri -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Serhat Nehir">
+    <meta property="og:title" content="Git ve GitHub | Serhat Nehir">
+    <meta property="og:description" content="Modern yazılım mühendisliğinde Git iç mimarisi, nesne modeli (blob, tree, commit), ileri seviye Git operasyonları, GitHub işbirliği kültürü ve DevOps otomasyonu.">
+    <meta property="og:url" content="https://www.serhatnehir.com.tr/makalelerim/git_ve_github.html">
+    <meta property="og:image" content="https://www.serhatnehir.com.tr/images/makaleler/veri_ambari.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Git ve GitHub | Serhat Nehir">
+    <meta name="twitter:description" content="Git iç mimarisi, temel ve ileri seviye Git komutları, GitHub Actions CI/CD, DevSecOps ve kurumsal dallanma stratejileri.">
+    <meta name="twitter:image" content="https://www.serhatnehir.com.tr/images/makaleler/veri_ambari.jpg">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Yapısal Veri (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Git ve GitHub | Serhat Nehir",
+      "description": "Modern yazılım mühendisliğinde Git iç mimarisi, nesne modeli (blob, tree, commit), ileri seviye Git operasyonları, GitHub işbirliği kültürü ve DevOps otomasyonu.",
+      "image": "https://www.serhatnehir.com.tr/images/makaleler/veri_ambari.jpg",
+      "author": {
+            "@type": "Person",
+            "name": "Serhat Nehir",
+            "url": "https://www.serhatnehir.com.tr/"
+      },
+      "publisher": {
+            "@type": "Person",
+            "name": "Serhat Nehir"
+      },
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.serhatnehir.com.tr/makalelerim/git_ve_github.html"
+      },
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "inLanguage": "tr-TR"
+}
+    </script>
+  </head>
+
+  <body class="article-page">
+    <div id="scroll-progress"></div>
+
+    <!-- Üst Bar -->
+    <header class="article-topbar">
+      <div class="container article-topbar-inner">
+        <a href="../index.html" aria-label="Serhat Nehir Ana Sayfa"><img src="../images/logo_siyah.png" alt="Serhat Nehir Logo" width="180" height="40"/></a>
+        <a class="back-home-btn" href="../index.html#makalelerim" aria-label="Makalelere Dön"><span class="fa fa-angle-left"></span> Makalelere Dön</a>
+      </div>
+    </header>
+
+    <!-- Başlık (Hero) Alanı -->
+    <section class="article-hero">
+      <div class="container">
+        <span class="article-category-pill">Yazılım Mühendisliği &amp; DevOps</span>
+        <h1>Git ve GitHub</h1>
+        <p class="text-width-large">Dağıtık versiyon kontrol sistemlerinin (DVCS) evrimi, Git’in anlık görüntü (snapshot) ve nesne mimarisi, ileri seviye Git operasyonları, GitHub işbirliği kültürü, CI/CD otomasyonu ve kurumsal dallanma stratejileri.</p>
+        <div class="article-author-bar">
+          <img class="article-author-avatar" src="../images/sn.jpg" alt="Serhat Nehir" width="48" height="48" loading="lazy" />
+          <div class="article-author-info">
+            <h6>Serhat Nehir</h6>
+            <span>Yazılım Geliştirici &amp; Yazar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ana İçerik -->
+    <main class="article-main-wrap">
+      <div class="container">
+        <div class="row">
+          <!-- Sol Menü: İçindekiler -->
+          <div class="col-lg-4">
+            <aside class="toc-card">
+              <div class="toc-title">İçindekiler</div>
+              <ul class="toc-list">
+                <li><a href="#bolum-1">1. Versiyon Kontrol Sistemlerinin (VCS) Evrimi ve Git’in Doğuşu</a></li>
+                <li><a href="#bolum-2">2. Git’in İç Mimarisi: Farklardan (Delta) Anlık Görüntülere (Snapshots)</a></li>
+                <li><a href="#bolum-3">3. Git vs. GitHub: Kavramsal Ayrım ve Ekosistem Karşılaştırması</a></li>
+                <li><a href="#bolum-4">4. Temel ve İleri Seviye Git Operasyonları</a></li>
+                <li><a href="#bolum-5">5. GitHub Ekosistemi ve Modern İşbirliği Mimarisi</a></li>
+                <li><a href="#bolum-6">6. Kurumsal Dallanma Stratejileri (Branching Strategies)</a></li>
+                <li><a href="#bolum-7">7. Profesyonel Geliştiriciler İçin En İyi Uygulamalar (Best Practices)</a></li>
+              </ul>
+            </aside>
+          </div>
+
+          <!-- Sağ Sütun: Makale Bölümleri -->
+          <div class="col-lg-8">
+
+            <!-- BÖLÜM 1 -->
+            <section class="article-section-card" id="bolum-1">
+              <div class="section-header-row">
+                <div class="section-num-badge">01</div>
+                <h3>Versiyon Kontrol Sistemlerinin (VCS) Evrimi ve Git’in Doğuşu</h3>
+              </div>
+              <p class="article-prose">
+                Yazılım mühendisliğinde kaynak kodun zaman içindeki evrimini takip etmek, yüzlerce geliştiricinin aynı kod tabanı üzerinde birbirinin çalışmasını ezmeden paralel çalışabilmesini sağlamak ve olası hatalarda sistemi saniyeler içinde önceki kararlı bir duruma döndürebilmek, modern yazılım yaşam döngüsünün (SDLC) en temel gereksinimidir. Bu gereksinimi yerel düzeyde kriptografik ve matematiksel bir kusursuzlukla çözen teknolojinin adı <strong>Git</strong>, bu teknolojiyi bulut tabanlı bir işbirliği, otomasyon (CI/CD) ve proje yönetimi ekosistemine dönüştüren küresel platformun adı ise <strong>GitHub</strong>’dır.
+              </p>
+              <p class="article-prose">
+                Bir yazılım projesinde kod dosyalarını <code>proje_son.zip</code>, <code>proje_kesin_son_v2.zip</code> gibi adlarla manuel yedeklemek, ekip büyüdükçe yönetilemez bir kaosa yol açar. <strong>Versiyon Kontrol Sistemleri (Version Control Systems - VCS)</strong>, dosya sistemindeki değişiklikleri zaman damgası, yazar bilgisi ve değişiklik özetiyle birlikte kayıt altına alan yazılımlardır.
+              </p>
+
+              <h4 class="article-subheading">Mimari Evrim: Yerelden Dağıtık Sistemlere</h4>
+              <ul class="article-topic-list">
+                <li><strong>1. Yerel Versiyon Kontrol Sistemleri (Local VCS):</strong> Geliştiricinin yalnızca kendi bilgisayarındaki disk üzerinde sürüm farklarını (patch set) tuttuğu ilk nesil sistemlerdir (ör. RCS). Ekip çalışmasına kapalıdır.</li>
+                <li>
+                  <strong>2. Merkezi Versiyon Kontrol Sistemleri (CVCS - Centralized VCS):</strong> <em>Subversion (SVN)</em>, <em>CVS</em> ve <em>Perforce</em> gibi sistemlerde tüm versiyon geçmişinin tutulduğu <strong>tek bir merkezi sunucu</strong> vardır. Geliştiriciler bu sunucudan yalnızca üzerinde çalıştıkları anlık dosyaları çekerler.
+                  <ul class="nested-sublist">
+                    <li><em>Kritik Zafiyeti (Single Point of Failure):</em> Merkezi sunucu çökerse veya ağ bağlantısı koparsa kimse versiyon geçmişini göremez, yeni kayıt (commit) oluşturamaz; sunucu diski bozulursa ve yedek yoksa projenin tüm geçmişi kalıcı olarak yok olur.</li>
+                  </ul>
+                </li>
+                <li><strong>3. Dağıtık Versiyon Kontrol Sistemleri (DVCS - Distributed VCS):</strong> <strong>Git</strong> ve <em>Mercurial</em> gibi dağıtık sistemlerde istemciler yalnızca dosyaların son halini çekmez; deponun (repository) ilk günden itibaren oluşan <strong>tüm tarihsel geçmişini birebir kopyalar (clone)</strong>. Böylece projeye dahil olan her geliştiricinin bilgisayarı, projenin tam teşekküllü bir yedeği (sunucusu) haline gelir. İnternet bağlantısı olmasa dahi dallanma (branching), birleştirme (merging), geçmişi inceleme ve commit alma işlemleri yerel disk hızında gerçekleştirilebilir.</li>
+              </ul>
+
+              <h4 class="article-subheading">Tarihsel Kırılma: 2005 ve Linus Torvalds</h4>
+              <p class="article-prose">
+                Linux çekirdeğinin (kernel) geliştirilmesi sürecinde, 2002-2005 yılları arasında ticari bir DVCS olan <em>BitKeeper</em> ücretsiz lisansla kullanılmaktaydı. 2005 yılında BitKeeper’ın geliştirici şirketi ile Linux topluluğu arasındaki ücretsiz kullanım anlaşması sona erince, Linux’un yaratıcısı <strong>Linus Torvalds</strong>, mevcut hiçbir versiyon kontrol sisteminin Linux çekirdeği ölçeğindeki binlerce yamayı (patch) saniyeler içinde işleyecek hıza ve veri bütünlüğüne sahip olmadığını görerek kendi sistemini yazmaya karar verdi. Torvalds’ın Nisan 2005’te C diliyle çekirdeğini yazdığı <strong>Git</strong>, şu dört tasarım hedefi üzerine inşa edilmiştir:
+              </p>
+              <div class="law-subgrid">
+                <div class="law-box">
+                  <span class="law-box-tag">Yüksek Hız</span>
+                  <p>Büyük ölçekli projelerde dal değiştirme ve fark alma işlemlerinin milisaniyeler içinde yerel disk üzerinde tamamlanması.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">Paralel Dallanma</span>
+                  <p>Doğrusal olmayan geliştirme (non-linear development) ile binlerce paralel dalın (branch) zahmetsizce açılıp birleştirilebilmesi.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">Tam Dağıtık Mimari</span>
+                  <p>Merkezi bir sunucuya bağımlılığın ortadan kaldırılması ve her klonun tam bir depo yedeği olması.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">Kriptografik Bütünlük</span>
+                  <p>Geçmişteki tek bir baytlık verinin dahi habersizce değiştirilmesinin <strong>SHA-1 / SHA-256</strong> özet ağaçlarıyla imkansız kılınması.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- BÖLÜM 2 -->
+            <section class="article-section-card" id="bolum-2">
+              <div class="section-header-row">
+                <div class="section-num-badge">02</div>
+                <h3>Git’in İç Mimarisi: Farklardan (Delta) Anlık Görüntülere (Snapshots)</h3>
+              </div>
+              <p class="article-prose">
+                Git’i diğer tüm versiyon kontrol sistemlerinden (SVN, CVS vb.) ayıran en temel fark, <strong>veriyi düşünme ve depolama biçimidir</strong>. Geleneksel sistemler veriyi <strong>dosya bazlı değişiklikler (delta-based)</strong> olarak saklar; yani bir A dosyasının ilk halini kaydeder, sonraki sürümlerde yalnızca o dosyaya eklenen veya silinen satır farklarını (<code>diff</code>) üst üste yazar.
+              </p>
+              <p class="article-prose">
+                <strong>Git ise veriyi bir minyatür dosya sistemi üzerindeki "Anlık Görüntüler" (Snapshots) akışı olarak saklar.</strong> Git’te her <code>commit</code> aldığınızda, Git o an projenizdeki tüm dosyaların fotoğrafını çeker ve bu duruma bir referans kaydeder. Performansı korumak için; eğer bir dosya bir önceki sürümden beri <strong>hiç değişmemişse</strong>, Git o dosyayı tekrar kopyalamaz, yalnızca bir önceki sürümde zaten kayıtlı olan özdeş dosyaya bir <strong>işaretçi (pointer/link)</strong> yönlendirir.
+              </p>
+
+              <h4 class="article-subheading">Git’in Üç Temel Alanı (The Three States) ve Dosya Yaşam Döngüsü</h4>
+              <ul class="article-topic-list">
+                <li><strong>1. Working Directory (Çalışma Dizini):</strong> Projenin belirli bir sürümünün, üzerinde kod yazmanız ve düzenleme yapmanız için Git’in sıkıştırılmış veritabanından çıkarılıp diskinizdeki klasöre açılmış (checkout edilmiş) halidir.</li>
+                <li><strong>2. Staging Area / Index (Hazırlık Alanı):</strong> Git’in en güçlü mimari bileşenidir. <code>.git/index</code> dosyasında tutulan bu ara katman, <strong>bir sonraki commit’e hangi değişikliklerin dahil edileceğini</strong> seçtiğiniz bekleme salonudur. Örneğin 10 dosyada değişiklik yaptınız ancak bunların 4 tanesi "Kullanıcı Giriş Modülü", 6 tanesi "Veritabanı Optimizasyonu" ile ilgiliyse; <code>git add</code> komutuyla yalnızca ilk 4 dosyayı Staging Area’ya alıp anlamlı ve atomik bir commit oluşturabilirsiniz.</li>
+                <li><strong>3. Git Directory / <code>.git</code> Repository (Yerel Depo):</strong> Git’in projenize ait tüm nesneleri, sıkıştırılmış veritabanını ve meta verileri sakladığı gizli <code>.git</code> klasörüdür. <code>git commit</code> komutunu çalıştırdığınızda, Staging Area’daki anlık görüntü kalıcı olarak bu veritabanına mühürlenir.</li>
+              </ul>
+
+              <h4 class="article-subheading"><code>.git</code> Klasörünün Kalbi: İçerik Adreslenebilir Dosya Sistemi ve 4 Nesne Tipi</h4>
+              <p class="article-prose">
+                Git, alt katmanda bir <strong>Anahtar-Değer (Key-Value) Veritabanıdır</strong>. Git’e herhangi bir içerik verdiğinizde, Git bu içeriğin kriptografik özetini (<strong>SHA-1</strong> ile 40 karakterlik onaltılık bir dizi, örn. <code>e5fa44f2b31c1fb553b6021e7360d07d5d91ff5e</code>) hesaplar ve bu özeti verinin erişim anahtarı yapar. <code>.git/objects</code> dizininde dört temel nesne (object) tipi bulunur:
+              </p>
+              <ul class="article-topic-list">
+                <li><strong>Blob (Binary Large Object):</strong> Dosyaların yalnızca <strong>içeriğini</strong> (kaynak kodunu/verisini) tutar; dosya adını veya izinlerini dahi içermez. İçeriği birebir aynı olan iki dosya, klasörleri farklı olsa bile Git veritabanında tek bir <code>blob</code> nesnesi olarak saklanır (veri tekilleştirme / deduplication).</li>
+                <li><strong>Tree (Ağaç Nesnesi):</strong> İşletim sistemindeki "klasör/dizin" yapısının karşılığıdır. Dosya adlarını, dosya izinlerini ve ilgili <code>blob</code> nesnelerinin veya alt <code>tree</code> nesnelerinin SHA-1 referanslarını tutar.</li>
+                <li><strong>Commit (Kayıt Nesnesi):</strong> Projenin o anki kök <code>tree</code> nesnesinin işaretçisini, bir önceki commit’in SHA-1 adresini (<code>parent commit</code>), yazar (author) ve kaydedici (committer) bilgilerini, zaman damgasını ve commit mesajını bir arada tutan sarmalayıcı nesnedir. Commit’lerin birbirine <code>parent</code> işaretçileriyle bağlanması, bilgisayar bilimlerinde <strong>Yönlü Çevrimsiz Çizge (Directed Acyclic Graph - DAG)</strong> yapısını oluşturur.</li>
+                <li><strong>Tag (Etiket Nesnesi):</strong> Genellikle <code>v1.0.0</code>, <code>v2.4.1</code> gibi yazılım sürüm noktalarını (release) işaretlemek için belirli bir commit’e atanan sabit, değişmez referans nesnesidir.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 3 -->
+            <section class="article-section-card" id="bolum-3">
+              <div class="section-header-row">
+                <div class="section-num-badge">03</div>
+                <h3>Git vs. GitHub: Kavramsal Ayrım ve Ekosistem Karşılaştırması</h3>
+              </div>
+              <p class="article-prose">
+                Yazılım dünyasına yeni adım atanların en sık düştüğü yanılgı, Git ve GitHub’ı aynı şey sanmaktır. En yalın ifadeyle: <strong>"Git kahvenin kendisiyse, GitHub o kahvenin sunulduğu ve insanların sosyalleştiği kafedir."</strong>
+              </p>
+              <div class="law-table-wrap">
+                <table class="law-table">
+                  <thead>
+                    <tr>
+                      <th>Karşılaştırma Kriteri</th>
+                      <th>Git</th>
+                      <th>GitHub</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Temel Tanım</strong></td>
+                      <td>Dağıtık Versiyon Kontrol Sistemi (Yazılım/Araç).</td>
+                      <td>Git depolarını barındıran bulut tabanlı platform ve geliştirici ağı.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Çalışma Ortamı</strong></td>
+                      <td>Geliştiricinin kendi bilgisayarında (yerel diskte) çalışır.</td>
+                      <td>Web üzerinde (Bulut / SaaS veya Kurumsal Sunucu) çalışır.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>İnternet Gereksinimi</strong></td>
+                      <td>Çevrimdışı (Offline) olarak tam kapasite çalışır (<code>commit</code>, <code>branch</code>, <code>merge</code>, <code>log</code>).</td>
+                      <td>Depoları senkronize etmek (<code>push</code>, <code>pull</code>), PR açmak ve CI/CD çalıştırmak için internet gerekir.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Arayüz</strong></td>
+                      <td>Öncelikle Komut Satırı Arayüzü (CLI); isteğe bağlı üçüncü parti GUI araçları.</td>
+                      <td>Zengin Web Arayüzü, Mobil Uygulama, GitHub CLI (<code>gh</code>) ve GitHub Desktop.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Yaratıcı ve Sahiplik</strong></td>
+                      <td>2005 yılında Linus Torvalds tarafından geliştirildi (Açık Kaynak - GPLv2).</td>
+                      <td>2008’de kuruldu; 2018 yılında <strong>Microsoft</strong> tarafından 7.5 milyar dolara satın alındı.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Odak Noktası</strong></td>
+                      <td>Kaynak kodun tarihsel takibi, dallanma ve birleştirme matematiği.</td>
+                      <td>Takım işbirliği, Kod İnceleme (Pull Request), CI/CD (Actions), Proje Yönetimi ve Güvenlik.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Alternatifleri</strong></td>
+                      <td>Mercurial, Subversion (SVN), Perforce, Fossil.</td>
+                      <td><strong>GitLab</strong>, <strong>Bitbucket (Atlassian)</strong>, Azure DevOps, Gitea, Codeberg.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- BÖLÜM 4 -->
+            <section class="article-section-card" id="bolum-4">
+              <div class="section-header-row">
+                <div class="section-num-badge">04</div>
+                <h3>Temel ve İleri Seviye Git Operasyonları</h3>
+              </div>
+
+              <h4 class="article-subheading">A. Temel İş Akışı Komutları</h4>
+              <p class="article-prose">
+                Bir projeyi başlatmak ve günlük değişiklikleri yönetmek için kullanılan çekirdek komut seti şunlardır:
+              </p>
+              <div class="code-block-wrap"><pre><code># 1. Küresel kimlik yapılandırması (İlk kurulumda bir kez yapılır)
+git config --global user.name "Serhat Nehir"
+git config --global user.email "serhatnehir.dev@gmail.com"
+
+# 2. Yeni bir yerel depo başlatma veya uzak depoyu klonlama
+git init                                          # Mevcut klasörü Git deposuna dönüştürür
+git clone https://github.com/kullanici/proje.git  # Uzak depoyu tüm geçmişiyle indirir
+
+# 3. Durum kontrolü ve değişiklikleri Hazırlık Alanına (Staging) alma
+git status                 # Değişen, eklenen veya takip edilmeyen dosyaları gösterir
+git diff                   # Çalışma dizini ile Staging Area arasındaki satır farklarını gösterir
+git add dosya_adi.py       # Belirli bir dosyayı Staging Area'ya alır
+git add .                  # Tüm değişiklikleri Staging Area'ya alır
+
+# 4. Değişiklikleri yerel veritabanına mühürleme (Commit)
+git commit -m "feat(auth): JWT tabanlı kimlik doğrulama katmanı eklendi"
+
+# 5. Uzak sunucu (GitHub) ile senkronizasyon
+git remote -v              # Bağlı olan uzak sunucu adreslerini listeler
+git push origin main       # Yerel commit'leri GitHub'daki 'main' dalına gönderir
+git fetch origin           # Uzak sunucudaki yenilikleri indirir ancak çalışma dizinine birleştirmez
+git pull origin main       # Uzak sunucudaki yenilikleri indirir ve mevcut dalla birleştirir (fetch + merge)</code></pre></div>
+
+              <h4 class="article-subheading">B. Dallanma (Branching) ve Birleştirme (Merging) Mimarisi</h4>
+              <p class="article-prose">
+                Birçok eski versiyon kontrol sisteminde yeni bir dal (branch) oluşturmak, kaynak kodun tüm dosyalarını fiziksel olarak başka bir klasöre kopyalamayı gerektirir ve dakikalar sürer. <strong>Git’te ise bir branch (dal), yalnızca bir commit nesnesinin SHA-1 adresini tutan 41 baytlık hafif ve hareketli bir metin işaretçisidir (pointer).</strong> Bu sayede Git’te yeni bir dal açmak (<code>git branch yeni-ozellik</code>) 1 milisaniyeden kısa sürer. <code>HEAD</code> adı verilen özel işaretçi ise o an hangi dalın veya commit’in üzerinde çalıştığınızı gösterir.
+              </p>
+              <div class="code-block-wrap"><pre><code># Yeni bir dal oluşturup o dala geçiş yapmak (Modern Git komutu)
+git switch -c ozellik/odeme-sistemi
+# (Eski kullanımda: git checkout -b ozellik/odeme-sistemi)
+
+# Ana dala dönüp geliştirilen özelliği ana dalla birleştirmek
+git switch main
+git merge ozellik/odeme-sistemi</code></pre></div>
+
+              <ul class="article-topic-list">
+                <li><strong>Fast-Forward Merge:</strong> Siz alt dalda çalışırken <code>main</code> dalına hiçbir yeni commit gelmemişse, Git yeni bir birleştirme commit’i oluşturmaz; yalnızca <code>main</code> işaretçisini ileri doğru kaydırır.</li>
+                <li><strong>Three-Way Merge (Üç Yollu Birleştirme):</strong> Hem <code>main</code> dalında hem de sizin alt dalınızda farklı geliştirmeler yapılmışsa, Git iki dalın ortak atasını (common ancestor) ve iki uç noktayı baz alarak yeni bir <strong>Merge Commit</strong> üretir.</li>
+                <li><strong>Merge Conflict (Birleştirme Çakışması):</strong> İki farklı geliştirici, <strong>aynı dosyanın aynı satırlarını</strong> farklı şekillerde değiştirip birleştirmeye çalıştığında Git hangi kodu seçeceğine karar veremez ve işlemi durdurarak dosyaya <code>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD</code>, <code>=======</code> ve <code>&gt;&gt;&gt;&gt;&gt;&gt;&gt; dal-adi</code> işaretlerini ekler. Geliştirici bu satırları manuel olarak veya IDE arayüzüyle düzenleyip <code>git add</code> ve <code>git commit</code> yaparak çakışmayı çözer.</li>
+              </ul>
+
+              <h4 class="article-subheading">C. İleri Seviye Git: Rebase, Cherry-Pick, Stash, Reflog ve Bisect</h4>
+              <ul class="article-topic-list">
+                <li><strong><code>git rebase</code> (Taban Değiştirme) vs. <code>git merge</code>:</strong> <code>git merge</code> tüm tarihsel dallanmaları korur ancak çok kalabalık projelerde commit grafiğini (<code>git log --graph</code>) karmaşık bir spagettiye dönüştürebilir. <code>git rebase main</code> komutu ise, kendi dalınızda yaptığınız commit’leri geçici olarak alır, dalınızın başlangıç noktasını <code>main</code> dalının en güncel ucuna taşır ve commit’lerinizi sırayla yeniden uygular. Sonuçta <strong>dümdüz, doğrusal ve tertemiz bir proje geçmişi</strong> elde edilir. <em>(Altın Kural: Kamuya açık / GitHub’a push edilmiş ortak dallarda asla rebase yapılmaz!)</em></li>
+                <li><strong><code>git stash</code> (Geçici Rafa Kaldırma):</strong> Üzerinde çalıştığınız kod henüz bitmemişken acil olarak başka bir dala geçip hata düzeltmeniz (hotfix) gerektiğinde, yarım kalan kodları commit atmadan <code>git stash</code> ile geçici hafızaya (rafa) kaldırabilir, işiniz bitince <code>git stash pop</code> ile kaldığınız yerden devam edebilirsiniz.</li>
+                <li><strong><code>git cherry-pick &lt;commit-hash&gt;</code>:</strong> Başka bir daldaki tüm değişiklikleri almak yerine, yalnızca spesifik tek bir commit’i (örneğin kritik bir bug düzeltmesini) cımbızla çekip kendi bulunduğunuz dala uygulamanızı sağlar.</li>
+                <li>
+                  <strong><code>git reset</code>, <code>git revert</code> ve Hayat Kurtaran <code>git reflog</code>:</strong>
+                  <ul class="nested-sublist">
+                    <li><code>git reset --soft HEAD~1</code>: Son commit’i geri alır ancak yazdığınız kodları Staging Area’da tutar.</li>
+                    <li><code>git reset --hard HEAD~1</code>: Son commit’i ve çalışma dizinindeki tüm değişiklikleri <strong>siler</strong>.</li>
+                    <li><code>git revert &lt;commit-hash&gt;</code>: Paylaşılmış (push edilmiş) bir dalda geçmişi silmeden, hatalı commit’in tam tersi işlemi yapan <strong>yeni bir commit</strong> oluşturarak güvenli geri alma sağlar.</li>
+                    <li><code>git reflog</code>: Yanlışlıkla <code>git reset --hard</code> yapıp kodlarınızı veya bir dalı sildiyseniz bile Git yerel olarak <code>HEAD</code> işaretçisinin her hareketini 30-90 gün boyunca <code>reflog</code> (Reference Logs) altında tutar. <code>git reflog</code> ile silinen commit’in SHA-1 kodunu bulup <code>git checkout</code> veya <code>git reset</code> ile saniyeler içinde kurtarabilirsiniz.</li>
+                  </ul>
+                </li>
+                <li><strong><code>git bisect</code> (İkili Arama ile Hata Avı):</strong> Projenin 500 commit önceki sürümü çalışırken bugünkü sürümünde bir hata (bug) varsa ve hatanın hangi commit’te girdiğini bilmiyorsanız; <code>git bisect</code> <strong>İkili Arama Algoritması (Binary Search)</strong> kullanarak geçmişi ikiye böler. 500 commit’i tek tek denemek yerine sadece 9 adımda hataya sebep olan spesifik commit’i tespit eder.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 5 -->
+            <section class="article-section-card" id="bolum-5">
+              <div class="section-header-row">
+                <div class="section-num-badge">05</div>
+                <h3>GitHub Ekosistemi ve Modern İşbirliği Mimarisi</h3>
+              </div>
+              <p class="article-prose">
+                GitHub, yerel Git depolarını merkezi bir bulut altyapısında birleştirerek yazılım geliştirmeyi "sosyal ve otomatize edilmiş bir mühendislik pratiğine" dönüştürmüştür.
+              </p>
+
+              <ul class="article-topic-list">
+                <li><strong>1. Pull Request (PR) ve Code Review (Kod İnceleme) Kültürü:</strong> Bir geliştirici yeni bir özellik veya hata düzeltmesi yazdığında bunu doğrudan ana dala (<code>main</code>) göndermez; ayrı bir dalda (<code>feature/x</code>) geliştirip GitHub üzerinden bir <strong>Pull Request (PR)</strong> açar. Takım arkadaşları değişen kod satırlarının altına yorum yazar, mimari iyileştirme önerir ve <strong>Branch Protection Rules (Dal Koruma Kuralları)</strong> sayesinde en az 2 kıdemli yazılımcı onaylamadan ve otomatik testler geçmeden kod birleştirilemez.</li>
+                <li><strong>2. Forking (Çatallama) ve Açık Kaynak Ekosistemi:</strong> Yazma yetkinizin olmadığı bir açık kaynak projeye (örneğin Linux, React, VS Code veya Python’a) katkıda bulunmak istediğinizde <strong>Fork</strong> mekanizmasını kullanırsınız. "Fork" butonu, o projenin GitHub sunucuları üzerinde sizin kendi hesabınıza ait tam bir kopyasını oluşturur. Kendi kopyanızda geliştirmeyi yapıp orijinal projeye bir <strong>Pull Request</strong> gönderirsiniz.</li>
+                <li><strong>3. GitHub Actions: Yerleşik CI/CD ve DevOps Otomasyonu:</strong> Doğrudan deponun içindeki <code>.github/workflows/*.yml</code> dosyalarıyla çalışan olay güdümlü (event-driven) bir <strong>Sürekli Entegrasyon ve Sürekli Dağıtım (CI/CD)</strong> motorudur. Depoya her kod gönderildiğinde (<code>on: push</code>) veya PR açıldığında (<code>on: pull_request</code>), GitHub bulutta sanal makineler (Ubuntu, Windows, macOS container’ları) ayağa kaldırır; kodun derlenmesi, testlerin çalıştırılması, Docker imajının oluşturulması ve canlı sunuculara dağıtımı tamamen otonom olarak gerçekleştirilir.</li>
+                <li><strong>4. GitHub Issues, Projects ve Discussions:</strong> Yazılım projelerinde görev takibi, hata bildirimleri (bug tracking) ve sprint planlaması (Kanban panoları) doğrudan kod ile entegre biçimde yürütülür. Bir PR mesajına <code>Fixes #42</code> yazıldığında, o PR birleştirildiği anda 42 numaralı hata kaydı (Issue) otomatik olarak kapatılır.</li>
+                <li>
+                  <strong>5. DevSecOps ve GitHub Güvenlik Katmanları:</strong>
+                  <ul class="nested-sublist">
+                    <li><strong>Dependabot:</strong> Projenizin bağımlılık dosyalarındaki açık kaynak kütüphaneleri sürekli tarar ve bir zafiyet (CVE) açıklandığında kütüphaneyi güvenli sürüme yükselten bir PR’ı otomatik açar.</li>
+                    <li><strong>Secret Scanning (Sır Taraması):</strong> Kodun içinde unutulan AWS anahtarı, veritabanı şifresi veya API Token’larını saniyeler içinde tespit ederek sızan anahtarı iptal ettirir.</li>
+                    <li><strong>CodeQL (Semantik Kod Analizi):</strong> Kaynak kodu sorgulayarak SQL Injection, XSS veya bellek taşması gibi güvenlik açıklarını kod canlıya çıkmadan yakalar.</li>
+                  </ul>
+                </li>
+                <li><strong>6. GitHub Copilot ve Yapay Zeka Destekli Mühendislik:</strong> IDE içerisine ve doğrudan GitHub platformuna entegre edilerek; bağlama duyarlı kod tamamlama, otomatik birim testi yazma, PR özetlerini çıkarma ve güvenlik açıklarını onarma süreçlerinde yapay zeka destekli yazılım mühendisliğinin standardını belirlemiştir.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 6 -->
+            <section class="article-section-card" id="bolum-6">
+              <div class="section-header-row">
+                <div class="section-num-badge">06</div>
+                <h3>Kurumsal Dallanma Stratejileri (Branching Strategies)</h3>
+              </div>
+              <p class="article-prose">
+                Profesyonel yazılım ekiplerinin Git ve GitHub üzerinde kaosu önlemek için benimsediği üç ana iş akışı (workflow) modeli vardır:
+              </p>
+
+              <div class="law-subgrid">
+                <div class="law-box">
+                  <span class="law-box-tag">1. Git Flow</span>
+                  <p>İki ana ömür boyu dal (<code>main</code> ve <code>develop</code>) ile üç destekleyici dal türü (<code>feature/*</code>, <code>release/*</code>, <code>hotfix/*</code>) barındırır. Belirli takvimlerle paket sürüm çıkaran kurumsal yazılımlar ve mobil uygulamalar için uygundur.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">2. GitHub Flow</span>
+                  <p>Yalnızca <strong>tek bir ana dal (<code>main</code>)</strong> vardır ve <code>main</code> her an canlıya çıkmaya hazırdır. Yeni özellik için <code>main</code>’den dal açılır, PR oluşturulur, test ve inceleme biter bitmez birleştirilip anında canlıya dağıtılır.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">3. Trunk-Based Development</span>
+                  <p>Google, Meta ve Netflix gibi teknoloji devlerinin tercihidir. Uzun ömürlü alt dallar açılmaz; kodlar günde birkaç kez küçük parçalar halinde doğrudan ana gövdeye (<code>trunk</code>) entegre edilir ve <strong>Feature Flags</strong> ile yönetilir.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- BÖLÜM 7 -->
+            <section class="article-section-card" id="bolum-7">
+              <div class="section-header-row">
+                <div class="section-num-badge">07</div>
+                <h3>Profesyonel Geliştiriciler İçin En İyi Uygulamalar (Best Practices)</h3>
+              </div>
+              <ul class="article-topic-list">
+                <li><strong>1. Atomik Commit İlkesi:</strong> Her bir <code>commit</code>, yalnızca <strong>tek bir mantıksal değişikliği</strong> veya düzeltmeyi kapsamalı ve tek başına derlenebilir/çalışabilir durumda olmalıdır. "Birçok şey düzeltildi" veya "Güncelleme" gibi mesajlar yerine, ileride bir hata çıktığında tek başına geri alınabilecek (revert edilebilecek) atomik parçalar oluşturulmalıdır.</li>
+                <li>
+                  <strong>2. Conventional Commits (Standart Commit Mesajları):</strong> Commit mesajlarını hem insanların hem de otomatik sürüm (Semantic Versioning) ve Changelog üretim araçlarının okuyabilmesi için standart önekler kullanılmalıdır:
+                  <ul class="nested-sublist">
+                    <li><code>feat:</code> Yeni bir özellik eklendiğinde,</li>
+                    <li><code>fix:</code> Bir hata (bug) giderildiğinde,</li>
+                    <li><code>docs:</code> Yalnızca dokümantasyon değiştiğinde,</li>
+                    <li><code>refactor:</code> Dış davranışı değiştirmeden kod mimarisi iyileştirildiğinde,</li>
+                    <li><code>perf:</code> Performans artırıcı bir kod değişikliği yapıldığında,</li>
+                    <li><code>chore:</code> Derleme veya bağımlılık ayarları güncellendiğinde.</li>
+                  </ul>
+                </li>
+                <li><strong>3. Eksiksiz <code>.gitignore</code> Yapılandırması:</strong> Derlenmiş ikili dosyalar (<code>bin/</code>, <code>obj/</code>, <code>dist/</code>), paket bağımlılık klasörleri (<code>node_modules/</code>, <code>venv/</code>), işletim sistemi kalıntıları (<code>.DS_Store</code>, <code>Thumbs.db</code>) ve en önemlisi <strong>şifreleri/API anahtarlarını barındıran <code>.env</code> dosyaları</strong> mutlaka <code>.gitignore</code> dosyasına eklenerek Git takibinin dışında tutulmalıdır.</li>
+                <li><strong>4. Kriptografik İmzalama (GPG / SSH Commit Signing):</strong> Git’te <code>user.name</code> ve <code>user.email</code> bilgisi herkes tarafından kolayca taklit edilebilir (spoofing). Kurumsal güvenlik için geliştiricilerin commit’lerini kendi <strong>GPG veya SSH özel anahtarlarıyla (<code>git commit -S</code>) imzalaması</strong> ve GitHub üzerinde <strong>"Verified" (Doğrulanmış)</strong> rozetiyle kimlik doğrulaması sağlaması en üst düzey güvenlik standardıdır.</li>
+              </ul>
+
+              <p class="article-prose article-prose-summary">
+                Sonuç olarak <strong>Git ve GitHub</strong> ikilisi, günümüzde yalnızca kod saklanan birer araç olmaktan çıkmış; açık kaynak felsefesinin küresel hafızası, DevOps otomasyonunun merkezi ve yazılım mühendislerinin dijital özgeçmişi (portfolyosu) haline gelmiştir. Bu mimariyi yalnızca temel komutlarıyla ezberlemek yerine altındaki graf teorisi, anlık görüntü mantığı ve işbirliği kültürüyle kavramak, modern yazılım mühendisliğinin en kritik yapı taşıdır.
+              </p>
+            </section>
+
+            <!-- Diğer Makaleler -->
+            <div class="other-articles-box">
+              <div class="other-articles-header">
+                <h5>Diğer Makalelerim</h5>
+                <span class="other-articles-count">10 Makale</span>
+              </div>
+              <div class="other-articles-grid">
+                <a class="other-article-link" href="bilisim_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Hukuk &amp; Bilişim</span>
+                      <span class="other-article-num">01</span>
+                    </div>
+                    <h6>Bilişim Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="kvkk.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">KVKK &amp; Güvenlik</span>
+                      <span class="other-article-num">02</span>
+                    </div>
+                    <h6>Kişisel Verileri Koruma Kanunu</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="btk.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Regülasyon</span>
+                      <span class="other-article-num">03</span>
+                    </div>
+                    <h6>Bilgi Teknolojileri ve İletişim Kurumu</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="verilerin_islenmesi.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Veri Yönetimi</span>
+                      <span class="other-article-num">04</span>
+                    </div>
+                    <h6>Verilerin İşlenmesi</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="yapay_zeka_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yapay Zeka &amp; Regülasyon</span>
+                      <span class="other-article-num">05</span>
+                    </div>
+                    <h6>Yapay Zeka Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="siber_guvenlik_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Siber Güvenlik &amp; Hukuk</span>
+                      <span class="other-article-num">06</span>
+                    </div>
+                    <h6>Siber Güvenlik Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="yazilim_gelistirme_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yazılım &amp; Fikri Mülkiyet</span>
+                      <span class="other-article-num">07</span>
+                    </div>
+                    <h6>Yazılım Geliştirme Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link active" href="git_ve_github.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yazılım Mühendisliği &amp; DevOps</span>
+                      <span class="other-article-num">08</span>
+                    </div>
+                    <h6>Git ve GitHub</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Şu An Okuyorsunuz</span>
+                    <span class="fa fa-check-circle"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="veri_ambari_ve_veri_madenciligi.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Veri Bilimi &amp; İş Zekası</span>
+                      <span class="other-article-num">09</span>
+                    </div>
+                    <h6>Veri Ambarı ve Veri Madenciliği</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="surec_otomasyonu_ve_verimlilik.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Dijital Dönüşüm &amp; Mühendislik</span>
+                      <span class="other-article-num">10</span>
+                    </div>
+                    <h6>Süreç Otomasyonu ve Verimlilik</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer class="section section-fluid footer-minimal context-dark">
+      <div class="bg-gray-15">
+        <div class="container-fluid">
+          <div class="footer-minimal-bottom-panel text-sm-left">
+            <div class="row row-10 align-items-md-center">
+              <div class="col-sm-6 col-md-4 text-sm-right text-md-center">
+                <ul class="list-inline list-inline-sm footer-social-list-2">
+                  <li><a class="icon fa fa-linkedin" href="https://www.linkedin.com/in/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"></a></li>
+                  <li><a class="icon fa fa-twitter" href="https://x.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"></a></li>
+                  <li><a class="icon fa fa-youtube" href="https://www.youtube.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="YouTube"></a></li>
+                  <li><a class="icon fa fa-instagram" href="https://www.instagram.com/serhat.nehir" target="_blank" rel="noopener noreferrer" aria-label="Instagram"></a></li>
+                  <li><a class="icon fa fa-facebook" href="https://www.facebook.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="Facebook"></a></li>
+                  <li><a class="icon fa fa-telegram" href="https://t.me/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-md-4 order-sm-first">
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year">2026</span> <span>Serhat Nehir</span></p>
+              </div>
+              <div class="col-sm-6 col-md-4 text-md-right">
+                <span>Tüm hakları Saklıdır.</span> <span>Tasarım Serhat Nehir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>
