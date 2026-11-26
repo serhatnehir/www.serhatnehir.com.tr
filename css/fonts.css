@@ -1,0 +1,125 @@
+/*
+* Fonts: FontAwesome 4.7.0, fl-bigmug-line, Linearicons
+*/
+
+/* Font Awesome Icons 4.7.0 */
+@font-face {
+  font-family: 'FontAwesome';
+  src: url("../fonts/fontawesome-webfont.eot?v=4.7.0");
+  src: url("../fonts/fontawesome-webfont.eot?#iefix&v=4.7.0") format("embedded-opentype"),
+       url("../fonts/fontawesome-webfont.woff2?v=4.7.0") format("woff2"),
+       url("../fonts/fontawesome-webfont.woff?v=4.7.0") format("woff"),
+       url("../fonts/fontawesome-webfont.ttf?v=4.7.0") format("truetype"),
+       url("../fonts/fontawesome-webfont.svg?v=4.7.0#fontawesomeregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.fa {
+  display: inline-block;
+  font-family: 'FontAwesome';
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class*='fa-']:before {
+  font-weight: 400;
+  font-family: 'FontAwesome';
+}
+
+.fa-lg { font-size: 1.33333333em; line-height: 0.75em; vertical-align: -15%; }
+.fa-2x { font-size: 2em; }
+.fa-3x { font-size: 3em; }
+.fa-4x { font-size: 4em; }
+.fa-5x { font-size: 5em; }
+.fa-fw { width: 1.28571429em; text-align: center; }
+.fa-spin { -webkit-animation: fa-spin 2s infinite linear; animation: fa-spin 2s infinite linear; }
+
+@keyframes fa-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(359deg); }
+}
+
+.fa-check:before { content: "\f00c"; }
+.fa-remove:before, .fa-close:before, .fa-times:before { content: "\f00d"; }
+.fa-twitter:before { content: "\f099"; }
+.fa-facebook-f:before, .fa-facebook:before { content: "\f09a"; }
+.fa-github:before { content: "\f09b"; }
+.fa-caret-down:before { content: "\f0d7"; }
+.fa-caret-up:before { content: "\f0d8"; }
+.fa-caret-left:before { content: "\f0d9"; }
+.fa-caret-right:before { content: "\f0da"; }
+.fa-envelope:before { content: "\f0e0"; }
+.fa-linkedin:before { content: "\f0e1"; }
+.fa-angle-left:before { content: "\f104"; }
+.fa-angle-right:before { content: "\f105"; }
+.fa-angle-up:before { content: "\f106"; }
+.fa-angle-down:before { content: "\f107"; }
+.fa-youtube:before { content: "\f167"; }
+.fa-youtube-play:before { content: "\f16a"; }
+.fa-instagram:before { content: "\f16d"; }
+.fa-circle-o-notch:before { content: "\f1ce"; }
+.fa-telegram:before { content: "\f2c6"; }
+
+/* Bigmug Line Flaticon Pack */
+@font-face {
+  font-family: "fl-bigmug-line";
+  src: url("../fonts/fl-bigmug-line.eot");
+  src: url("../fonts/fl-bigmug-line.eot#iefix") format("embedded-opentype"),
+       url("../fonts/fl-bigmug-line.woff") format("woff"),
+       url("../fonts/fl-bigmug-line.ttf") format("truetype"),
+       url("../fonts/fl-bigmug-line.svg") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+.fl-bigmug-line-ico,
+[class^="fl-bigmug-line-"]:before,
+[class*=" fl-bigmug-line-"]:before,
+[class^="fl-bigmug-line-"]:after,
+[class*=" fl-bigmug-line-"]:after {
+  font-family: 'fl-bigmug-line';
+  font-size: inherit;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.fl-bigmug-line-cellphone55:before { content: "\e011"; }
+.fl-bigmug-line-chat55:before { content: "\e015"; }
+.fl-bigmug-line-close42:before { content: "\e01e"; }
+.fl-bigmug-line-search74:before { content: "\e09c"; }
+.fl-bigmug-line-share27:before { content: "\e09e"; }
+.fl-bigmug-line-up104:before { content: "\e0c6"; }
+.fl-bigmug-line-zoom60:before { content: "\e0db"; }
+
+/* Linearicons */
+@font-face {
+  font-family: 'Linearicons';
+  font-weight: normal;
+  font-style: normal;
+  src: url("../fonts/Linearicons.eot");
+  src: local("Linearicons"),
+       url("../fonts/Linearicons.woff") format("woff"),
+       url("../fonts/Linearicons.ttf") format("truetype");
+  font-display: swap;
+}
+
+.linearicons,
+[class^="linearicons-"],
+[class*=" linearicons-"] {
+  font-family: 'Linearicons' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.linearicons-outbox:before { content: "\e99e"; }

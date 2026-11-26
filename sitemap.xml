@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+
+  <url>
+    <loc>https://www.serhatnehir.com.tr/</loc>
+    <lastmod>2026-10-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/sn.jpg</image:loc>
+      <image:title>Serhat Nehir</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/algoritmalar.jpg</image:loc>
+      <image:title>Programlamaya Giriş - Algoritmalar ve Akış Şemaları</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/delphi.jpg</image:loc>
+      <image:title>Borland Delphi ile Programlama</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/visual_basic.jpg</image:loc>
+      <image:title>Microsoft Visual Basic ile Programlama</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/grafik_tasarimi.jpg</image:loc>
+      <image:title>CorelDraw ile Grafik Tasarımı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/office_programlari.jpg</image:loc>
+      <image:title>Office Programları Kullanımı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/ileri_excel.jpg</image:loc>
+      <image:title>İleri Excel Kullanımı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/komut_istemi.jpg</image:loc>
+      <image:title>Komut İstemi Kullanımı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/bilgisayar_kullanimi.jpg</image:loc>
+      <image:title>Bilgisayar Kullanımı</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/web_tasarimi.jpg</image:loc>
+      <image:title>Web Tasarımı ve Kodlama</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/php&amp;mysql.jpg</image:loc>
+      <image:title>PHP &amp; MySQL ile Web Geliştirme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/veri_yapilari.jpg</image:loc>
+      <image:title>Veri Yapıları</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/veri_ambari_madenciligi.jpg</image:loc>
+      <image:title>Veri Ambarı ve Veri Madenciliği</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/python_veribilimi.jpg</image:loc>
+      <image:title>Python ile Veri Bilimi</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/c_sarp.jpg</image:loc>
+      <image:title>C# ile Yazılım Geliştirme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/java.jpg</image:loc>
+      <image:title>Java ile Yazılım Geliştirme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/python.jpg</image:loc>
+      <image:title>Python ile Yazılım Geliştirme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/angular.jpg</image:loc>
+      <image:title>Angular ile Web Geliştirme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/react.jpg</image:loc>
+      <image:title>React ile Web Geliştirme</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/sql_server.jpg</image:loc>
+      <image:title>Veri Tabanı Tasarımı - SQL Server 2019</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/matematik.jpg</image:loc>
+      <image:title>Yazılımcılar için Matematik</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/makine.jpg</image:loc>
+      <image:title>Makine Öğrenimi ve Yapay Zeka</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/ingilizce.jpg</image:loc>
+      <image:title>Yazılımcılar için İngilizce</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/orjinal/algoritmalarveprogramlama.jpg</image:loc>
+      <image:title>Algoritmalar ve Programlama</image:title>
+    </image:image>
+  </url>
+
+<!-- Projelerim -->
+  <url>
+    <loc>https://www.serhatnehir.com.tr/2xhizlioku</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/10parmakhizliyaz</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/osmanlica_egitim</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/videodesifre</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/ekitap</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Makalelerim (10 Makale) -->
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/bilisim_hukuku.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/bilisim_hukuku.jpg</image:loc>
+      <image:title>Bilişim Hukuku</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/kvkk.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/kisisel_verilerin_korunmasi.jpg</image:loc>
+      <image:title>Kişisel Verileri Koruma Kanunu</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/btk.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/btk.jpg</image:loc>
+      <image:title>Bilgi Teknolojileri ve İletişim Kurumu</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/verilerin_islenmesi.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/verilerin_islenmesi.jpg</image:loc>
+      <image:title>Verilerin İşlenmesi</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/yapay_zeka_hukuku.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/yapayzekahukuku.png</image:loc>
+      <image:title>Yapay Zeka Hukuku</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/siber_guvenlik_hukuku.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/siber_guvenlik_hukuku.jpg</image:loc>
+      <image:title>Siber Güvenlik Hukuku</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/yazilim_gelistirme_hukuku.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/yazilim_gelistirme_hukuku.jpg</image:loc>
+      <image:title>Yazılım Geliştirme Hukuku</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/git_ve_github.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/veri_ambari.jpg</image:loc>
+      <image:title>Git ve GitHub</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/veri_ambari_ve_veri_madenciligi.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/veri_ambari.jpg</image:loc>
+      <image:title>Veri Ambarı ve Veri Madenciliği</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.serhatnehir.com.tr/makalelerim/surec_otomasyonu_ve_verimlilik.html</loc>
+    <lastmod>2026-11-04</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://www.serhatnehir.com.tr/images/makaleler/surec_otomas.jpg</image:loc>
+      <image:title>Süreç Otomasyonu ve Verimlilik</image:title>
+    </image:image>
+  </url>
+
+</urlset>

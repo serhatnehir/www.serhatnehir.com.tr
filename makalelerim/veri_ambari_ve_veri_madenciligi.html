@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html class="wide" lang="tr">
+  <head>
+    <title>Veri Ambarı ve Veri Madenciliği | Serhat Nehir</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.serhatnehir.com.tr/makalelerim/veri_ambari_ve_veri_madenciligi.html">
+    <meta name="description" content="Veri Ambarı (Data Warehouse) mimarisi, ETL/ELT süreçleri, OLTP ve OLAP sistemleri, Yıldız ve Kar Tanesi şemaları, CRISP-DM ve Veri Madenciliği (Data Mining) algoritmaları - Serhat Nehir" />
+    <!-- Open Graph / Sosyal Medya Paylaşım Etiketleri -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Serhat Nehir">
+    <meta property="og:title" content="Veri Ambarı ve Veri Madenciliği | Serhat Nehir">
+    <meta property="og:description" content="Veri ambarı tasarım ilkeleri (Inmon ve Kimball), çok boyutlu veri modelleme, OLAP küpleri, CRISP-DM metodolojisi ve temel veri madenciliği algoritmaları.">
+    <meta property="og:url" content="https://www.serhatnehir.com.tr/makalelerim/veri_ambari_ve_veri_madenciligi.html">
+    <meta property="og:image" content="https://www.serhatnehir.com.tr/images/makaleler/veri_ambari.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Veri Ambarı ve Veri Madenciliği | Serhat Nehir">
+    <meta name="twitter:description" content="Veri Ambarı mimarisi, ETL/ELT, OLAP küpleri, sınıflandırma, kümeleme, birliktelik kuralları ve büyük veri analitiği.">
+    <meta name="twitter:image" content="https://www.serhatnehir.com.tr/images/makaleler/veri_ambari.jpg">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Yapısal Veri (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Veri Ambarı ve Veri Madenciliği | Serhat Nehir",
+      "description": "Veri ambarı tasarım ilkeleri (Inmon ve Kimball), çok boyutlu veri modelleme, OLAP küpleri, CRISP-DM metodolojisi ve temel veri madenciliği algoritmaları.",
+      "image": "https://www.serhatnehir.com.tr/images/makaleler/veri_ambari.jpg",
+      "author": {
+            "@type": "Person",
+            "name": "Serhat Nehir",
+            "url": "https://www.serhatnehir.com.tr/"
+      },
+      "publisher": {
+            "@type": "Person",
+            "name": "Serhat Nehir"
+      },
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.serhatnehir.com.tr/makalelerim/veri_ambari_ve_veri_madenciligi.html"
+      },
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "inLanguage": "tr-TR"
+}
+    </script>
+  </head>
+
+  <body class="article-page">
+    <div id="scroll-progress"></div>
+
+    <!-- Üst Bar -->
+    <header class="article-topbar">
+      <div class="container article-topbar-inner">
+        <a href="../index.html" aria-label="Serhat Nehir Ana Sayfa"><img src="../images/logo_siyah.png" alt="Serhat Nehir Logo" width="180" height="40"/></a>
+        <a class="back-home-btn" href="../index.html#makalelerim" aria-label="Makalelere Dön"><span class="fa fa-angle-left"></span> Makalelere Dön</a>
+      </div>
+    </header>
+
+    <!-- Başlık (Hero) Alanı -->
+    <section class="article-hero">
+      <div class="container">
+        <span class="article-category-pill">Veri Bilimi &amp; İş Zekası</span>
+        <h1>Veri Ambarı ve Veri Madenciliği</h1>
+        <p class="text-width-large">Operasyonel veritabanlarından (OLTP) analitik veri ambarlarına (OLAP) geçiş, ETL/ELT boru hatları, çok boyutlu modelleme, CRISP-DM metodolojisi ve veri madenciliği algoritmalarıyla örüntü keşfi.</p>
+        <div class="article-author-bar">
+          <img class="article-author-avatar" src="../images/sn.jpg" alt="Serhat Nehir" width="48" height="48" loading="lazy" />
+          <div class="article-author-info">
+            <h6>Serhat Nehir</h6>
+            <span>Yazılım Geliştirici &amp; Yazar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ana İçerik -->
+    <main class="article-main-wrap">
+      <div class="container">
+        <div class="row">
+          <!-- Sol Menü: İçindekiler -->
+          <div class="col-lg-4">
+            <aside class="toc-card">
+              <div class="toc-title">İçindekiler</div>
+              <ul class="toc-list">
+                <li><a href="#bolum-1">1. Kurumsal Veri Mimarisi: OLTP’den Veri Ambarına (OLAP) Geçiş</a></li>
+                <li><a href="#bolum-2">2. Veri Ambarı Mimarisi, ETL / ELT Süreçleri ve Data Lakehouse Evrimi</a></li>
+                <li><a href="#bolum-3">3. Çok Boyutlu Veri Modelleme: Yıldız, Kar Tanesi Şemaları ve OLAP Küpleri</a></li>
+                <li><a href="#bolum-4">4. Veritabanlarında Bilgi Keşfi (KDD) ve CRISP-DM Metodolojisi</a></li>
+                <li><a href="#bolum-5">5. Veri Madenciliği Görevleri, Algoritmaları ve Matematiksel Modeller</a></li>
+                <li><a href="#bolum-6">6. Veri Kalitesi, Yönetişim ve Analitik Performans Optimizasyonu</a></li>
+                <li><a href="#bolum-7">7. Büyük Veri Analitiğinde Hukuki Uyum (KVKK), Anonimleştirme ve Etik</a></li>
+              </ul>
+            </aside>
+          </div>
+
+          <!-- Sağ Sütun: Makale Bölümleri -->
+          <div class="col-lg-8">
+
+            <!-- BÖLÜM 1 -->
+            <section class="article-section-card" id="bolum-1">
+              <div class="section-header-row">
+                <div class="section-num-badge">01</div>
+                <h3>Kurumsal Veri Mimarisi: OLTP’den Veri Ambarına (OLAP) Geçiş</h3>
+              </div>
+              <p class="article-prose">
+                Modern organizasyonlar her saniye satış terminallerinden, web/mobil uygulamalardan, kurumsal kaynak planlama (ERP) yazılımlarından, müşteri ilişkileri yönetimi (CRM) sistemlerinden ve IoT sensörlerinden milyonlarca satır ham veri üretmektedir. Ancak günlük operasyonları yürütmek üzere tasarlanmış geleneksel ilişkisel veritabanları, geçmişe dönük çok yıllı stratejik analizler yapmak veya makine öğrenmesi modelleri eğitmek için uygun değildir. İşte <strong>Veri Ambarı (Data Warehouse - DWH)</strong>, birbirinden kopuk operasyonel veri adacıklarını tek bir analitik çatı altında birleştiren, geçmişe dönük karar destek altyapısıdır.
+              </p>
+              <p class="article-prose">
+                Veri ambarı kavramının kurucusu kabul edilen <strong>Bill Inmon (1990)</strong>, veri ambarını yönetimin karar alma süreçlerini destekleyen dört temel nitelik üzerinden tanımlamıştır:
+              </p>
+
+              <div class="law-subgrid">
+                <div class="law-box">
+                  <span class="law-box-tag">1. Konu Odaklı (Subject-Oriented)</span>
+                  <p>Operasyonel sistemler "sipariş girişi" veya "fatura kesimi" gibi süreçlere odaklanırken; veri ambarı "Müşteri", "Ürün", "Satış" veya "Risk" gibi temel iş konularına odaklanır.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">2. Bütünleşik (Integrated)</span>
+                  <p>Farklı kaynak sistemlerdeki tutarsızlıklar (örneğin bir sistemde cinsiyetin <code>E/K</code>, diğerinde <code>1/0</code>, bir başkasında <code>M/F</code> olarak tutulması) standartlaştırılarak tekilleştirilir.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">3. Zamanla Değişen (Time-Variant)</span>
+                  <p>Operasyonel veritabanları yalnızca güncel durumu (anlık bakiyeyi veya son adresi) tutarken; veri ambarı 5-10 yıllık tarihsel değişimi zaman damgalı seriler halinde saklar.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">4. Kalıcı / Uçucu Olmayan (Non-Volatile)</span>
+                  <p>Veri ambarına bir kez yazılan tarihsel kayıtlar üzerinde operasyonel <code>UPDATE</code> veya <code>DELETE</code> işlemleri yapılmaz; veriler periyodik olarak eklenir ve salt okunur (read-only) analiz edilir.</p>
+                </div>
+              </div>
+
+              <h4 class="article-subheading">OLTP (Operasyonel) ve OLAP (Analitik) Sistemlerin Karşılaştırması</h4>
+              <p class="article-prose">
+                Bir e-ticaret sitesinde müşterinin sepetini onaylaması milisaniyeler içinde gerçekleşmesi gereken bir <strong>OLTP (Online Transaction Processing - Çevrimiçi Hareket İşleme)</strong> sürecidir. Buna karşın, "Son 5 yılda İç Anadolu bölgesinde kış aylarında en çok hangi ürün kategorisinde kârlılık artışı yaşandı?" sorusunun yanıtlanması <strong>OLAP (Online Analytical Processing - Çevrimiçi Analitik İşleme)</strong> sistemlerinin görevidir:
+              </p>
+
+              <div class="law-table-wrap">
+                <table class="law-table">
+                  <thead>
+                    <tr>
+                      <th>Karşılaştırma Kriteri</th>
+                      <th>OLTP (Operasyonel Veritabanları)</th>
+                      <th>OLAP (Veri Ambarı Sistemleri)</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>Temel Amaç</strong></td>
+                      <td>Günlük iş operasyonlarını yürütmek (kayıt ekleme, güncelleme, silme).</td>
+                      <td>Karar destek, raporlama, iş zekası (BI) ve veri madenciliği analitiği.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Veri Kapsamı</strong></td>
+                      <td>Güncel ve anlık operasyonel veriler (genellikle son birkaç ay).</td>
+                      <td>Tarihsel, konsolide edilmiş ve çok yıllı arşiv verileri (5-15 yıl).</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Veritabanı Tasarımı</strong></td>
+                      <td>Veri tekrarını önlemek için yüksek derecede normalize edilmiş (<strong>3NF / BCNF</strong>) E-R şemaları.</td>
+                      <td>Sorgu hızını maksimize etmek için denormalize edilmiş <strong>Yıldız (Star)</strong> veya <strong>Kar Tanesi (Snowflake)</strong> şemaları.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Sorgu Karakteristiği</strong></td>
+                      <td>Kısa, önceden tanımlı, az sayıda satıra dokunan basit okuma/yazma sorguları (ACID uyumlu).</td>
+                      <td>Milyonlarca satırı tarayan, çoklu birleştirme (<code>JOIN</code>) ve kümeleme (<code>GROUP BY</code>, <code>SUM</code>) içeren karmaşık sorgular.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kullanıcı Profili</strong></td>
+                      <td>Milyonlarca son kullanıcı, kasiyer, müşteri temsilcisi, operasyon personeli.</td>
+                      <td>Veri bilimciler, iş analistleri, veri mühendisleri ve üst düzey yöneticiler (C-Level).</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+
+            <!-- BÖLÜM 2 -->
+            <section class="article-section-card" id="bolum-2">
+              <div class="section-header-row">
+                <div class="section-num-badge">02</div>
+                <h3>Veri Ambarı Mimarisi, ETL / ELT Süreçleri ve Data Lakehouse Evrimi</h3>
+              </div>
+              <p class="article-prose">
+                Veri ambarı tasarımı konusunda literatürde iki büyük ekol bulunmaktadır: <strong>Bill Inmon’ın "Yukarıdan Aşağıya" (Top-Down)</strong> yaklaşımı ve <strong>Ralph Kimball’ın "Aşağıdan Yukarıya" (Bottom-Up)</strong> yaklaşımı. Inmon, önce tüm kurumu kapsayan merkezi ve normalize edilmiş (3NF) bir Kurumsal Veri Ambarı kurulmasını, departmanlara özel <strong>Veri Reyonlarının (Data Marts)</strong> bu merkezden türetilmesini savunur. Kimball ise önce finans, satış, pazarlama gibi departmanlar için hızlıca boyutsal (Star Schema) Veri Reyonları oluşturulmasını ve bunların ortak boyutlarla (conformed dimensions) birbirine bağlanarak veri ambarını oluşturmasını önerir.
+              </p>
+
+              <h4 class="article-subheading">A. Veri Entegrasyon Boru Hatları: ETL vs. ELT</h4>
+              <p class="article-prose">
+                Kaynak sistemlerdeki ham verinin veri ambarına taşınması sürecinin kalbini veri entegrasyon boru hatları oluşturur:
+              </p>
+              <ul class="article-topic-list">
+                <li>
+                  <strong>ETL (Extract - Transform - Load / Çıkar - Dönüştür - Yükle):</strong> Geleneksel mimaridir.
+                  <ul class="nested-sublist">
+                    <li><strong>Extract (Çıkarma):</strong> İlişkisel veritabanlarından (PostgreSQL, Oracle, MSSQL), ERP/CRM paketlerinden, JSON/XML API’lerinden veya düz dosyalardan (CSV, log) verinin okunmasıdır.</li>
+                    <li><strong>Transform (Dönüştürme):</strong> Verinin ara bir sunucuda (Staging Area) temizlenmesi, eksik/hatalı değerlerin ayıklanması, veri tiplerinin eşitlenmesi, tekilleştirme (deduplication), para birimi/birim dönüşümleri ve iş kurallarının uygulanmasıdır.</li>
+                    <li><strong>Load (Yükleme):</strong> Temizlenmiş ve boyutsal modele uygun hale getirilmiş verinin hedef veri ambarına toplu (batch) veya akış (streaming) halinde yüklenmesidir.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>ELT (Extract - Load - Transform):</strong> Bulut tabanlı modern veri ambarlarının (Snowflake, Google BigQuery, Amazon Redshift, Azure Synapse) devasa paralel işlem (MPP) gücüyle yaygınlaşan yaklaşımdır. Ham veri kaynaktan çıkarılır çıkarılmaz doğrudan hedef bulut veri ambarına yüklenir (Load) ve tüm dönüştürme işlemleri (Transform - örn. <code>dbt</code> araçlarıyla) veri ambarının kendi yüksek performanslı SQL motoru üzerinde gerçekleştirilir.
+                </li>
+              </ul>
+
+              <h4 class="article-subheading">B. Veri Gölü (Data Lake) ve Data Lakehouse Evrimi</h4>
+              <p class="article-prose article-prose-no-bottom">
+                Geleneksel veri ambarları yapılandırılmış (structured / tablosal) verilerde mükemmel çalışırken; görüntü, ses, sosyal medya metinleri ve ham sensör logları gibi <strong>yapılandırılmamış (unstructured)</strong> veya <strong>yarı yapılandırılmış (semi-structured)</strong> verileri saklamakta maliyetli ve katı kalmıştır. Bu ihtiyacı çözmek için her türlü ham veriyi doğal formatında ucuz nesne depolama (Object Storage - S3, ADLS, HDFS) üzerinde tutan <strong>Veri Gölleri (Data Lakes)</strong> doğmuştur. Ancak veri göllerinin ACID işlem garantisinden ve şema denetiminden yoksun olması zamanla "Veri Bataklığına" (Data Swamp) yol açmıştır. Günümüzde <strong>Apache Iceberg, Delta Lake ve Apache Hudi</strong> gibi açık tablo formatlarıyla veri gölünün esnekliğini ve ucuzluğunu, veri ambarının ACID işlem bütünlüğü ve yüksek SQL performansıyla birleştiren <strong>Data Lakehouse (Veri Gölü Ambarı)</strong> mimarisi endüstri standardı haline gelmiştir.
+              </p>
+            </section>
+
+            <!-- BÖLÜM 3 -->
+            <section class="article-section-card" id="bolum-3">
+              <div class="section-header-row">
+                <div class="section-num-badge">03</div>
+                <h3>Çok Boyutlu Veri Modelleme: Yıldız, Kar Tanesi Şemaları ve OLAP Küpleri</h3>
+              </div>
+              <p class="article-prose">
+                Veri ambarlarında analitik sorguların saniyeler içinde sonuç döndürebilmesi için Ralph Kimball tarafından geliştirilen <strong>Boyutsal Modelleme (Dimensional Modeling)</strong> tekniği kullanılır. Bu model iki temel tablo türüne dayanır:
+              </p>
+
+              <ul class="article-topic-list">
+                <li><strong>Olgu Tablosu (Fact Table):</strong> İş sürecinin sayısal, ölçülebilir metriklerini (<code>Satis_Miktari</code>, <code>Birim_Fiyat</code>, <code>Indirim_Tutari</code>, <code>Net_Kar</code>) ve boyut tablolarına bağlanan yabancı anahtarları (Foreign Keys) tutan merkez tablodur. Satır sayısı çok yüksektir (milyonlarca/milyarlarca satır) ancak sütun sayısı azdır.</li>
+                <li><strong>Boyut Tabloları (Dimension Tables):</strong> Olgu tablosundaki sayısal verilerin <em>"Kim, Ne, Nerede, Ne Zaman, Nasıl?"</em> sorularına yanıt veren betimleyici bağlamını (<code>Dim_Musteri</code>, <code>Dim_Urun</code>, <code>Dim_Zaman</code>, <code>Dim_Magaza</code>) tutan tablolardır. Kaynak sistemlerin birincil anahtarlarından bağımsız olarak veri ambarı tarafından üretilen yapay anahtarlar (<strong>Surrogate Keys</strong>) ile olgu tablosuna bağlanır.</li>
+              </ul>
+
+              <h4 class="article-subheading">A. Yıldız Şeması (Star Schema) ve Kar Tanesi Şeması (Snowflake Schema)</h4>
+              <ul class="article-topic-list">
+                <li><strong>Yıldız Şeması (Star Schema):</strong> Merkezde tek bir Olgu (Fact) tablosu ve onun etrafında doğrudan bağlanmış, normalize edilmemiş (denormalized) tek kademeli Boyut (Dimension) tablolarından oluşur. Görsel olarak bir yıldızı andırır. <code>JOIN</code> (birleştirme) sayısı minimum olduğu için <strong>okuma ve OLAP sorgu performansı en yüksek şema tipidir</strong>.</li>
+                <li><strong>Kar Tanesi Şeması (Snowflake Schema):</strong> Yıldız şemasındaki boyut tablolarının kendi içinde tekrar normalize edilerek alt boyut tablolarına bölünmesiyle oluşur (örneğin <code>Dim_Urun</code> tablosundan <code>Dim_Kategori</code> ve <code>Dim_Marka</code> tablolarının ayrılması). Disk alanından tasarruf sağlar ancak sorgularda daha fazla <code>JOIN</code> işlemi gerektirir.</li>
+                <li><strong>Yavaş Değişen Boyutlar (Slowly Changing Dimensions - SCD):</strong> Zaman içinde değişen boyut niteliklerinin (örneğin müşterinin ikamet şehrinin veya medeni durumunun değişmesi) nasıl yönetileceğini belirler. <strong>SCD Tip 1</strong> eski verinin üzerine yazar (tarihçe tutulmaz); <strong>SCD Tip 2</strong> her değişiklikte yeni bir satır açıp <code>Baslangic_Tarihi</code>, <code>Bitis_Tarihi</code> ve <code>Aktif_Mi</code> bayrağı ekleyerek tüm tarihsel geçmişi kusursuz korur; <strong>SCD Tip 3</strong> ise aynı satırda <code>Onceki_Sehir</code> ve <code>Guncel_Sehir</code> şeklinde ek sütun tutar.</li>
+              </ul>
+
+              <h4 class="article-subheading">B. OLAP Küpleri ve Temel Analitik Operasyonlar</h4>
+              <p class="article-prose">
+                Çok boyutlu veriler mantıksal olarak 3 veya daha fazla boyutlu <strong>OLAP Küpleri (Data Cubes / Hypercubes)</strong> olarak modellenir. Analistler bu küpler üzerinde dört temel gezinme operasyonu gerçekleştirir:
+              </p>
+              <div class="law-subgrid">
+                <div class="law-box">
+                  <span class="law-box-tag">Roll-Up (Yukarı Toplama)</span>
+                  <p>Veriyi hiyerarşide daha üst bir özet seviyesine taşır (örneğin Günlük satışlardan Aylık/Yıllık satışlara veya İlçeden Ülke toplamına çıkma).</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">Drill-Down (Detaya İnme)</span>
+                  <p>Roll-up işleminin tersidir; özet veriden en ince detaya (Yıllık cirodan çeyreklik, aylık ve mağaza/saat bazlı kırılıma) inilmesini sağlar.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">Slice &amp; Dice (Kesit ve Dilimleme)</span>
+                  <p><strong>Slice</strong> küpten tek bir boyut değerine göre 2 boyutlu kesit alır (örn. sadece 2026 yılı); <strong>Dice</strong> ise birden fazla boyutta filtre uygulayarak alt küp çıkarır.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">Pivot (Döndürme)</span>
+                  <p>Rapor matrisindeki satır ve sütun eksenlerinin yerini değiştirerek veriye farklı çapraz perspektiflerden bakılmasını sağlar.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- BÖLÜM 4 -->
+            <section class="article-section-card" id="bolum-4">
+              <div class="section-header-row">
+                <div class="section-num-badge">04</div>
+                <h3>Veritabanlarında Bilgi Keşfi (KDD) ve CRISP-DM Metodolojisi</h3>
+              </div>
+              <p class="article-prose">
+                Veri ambarı veriyi düzenli ve erişilebilir şekilde saklar; ancak bu devasa veri yığınlarının içindeki <strong>gizli kalmış, önceden bilinmeyen, geçerli ve iş süreçlerinde aksiyona dönüştürülebilir örüntülerin (patterns)</strong> istatistiksel ve algoritmik yöntemlerle ortaya çıkarılması sürecine <strong>Veri Madenciliği (Data Mining)</strong> denir. Akademik literatürde veri madenciliği, <strong>Veritabanlarında Bilgi Keşfi (Knowledge Discovery in Databases - KDD)</strong> sürecinin çekirdek adımıdır.
+              </p>
+
+              <h4 class="article-subheading">CRISP-DM Endüstri Standardı Süreç Modeli (6 Aşama)</h4>
+              <p class="article-prose">
+                Dünya genelinde veri madenciliği ve veri bilimi projelerinde en yaygın kullanılan metodoloji <strong>CRISP-DM (Cross-Industry Standard Process for Data Mining)</strong> yaşam döngüsüdür:
+              </p>
+              <ul class="article-topic-list">
+                <li><strong>1. İşin Anlaşılması (Business Understanding):</strong> Projenin ticari veya kurumsal hedefi belirlenir (örneğin: "Telekom abonelerinin gelecek ay aboneliklerini iptal etme -Churn- oranını %15 azaltmak").</li>
+                <li><strong>2. Verinin Anlaşılması (Data Understanding):</strong> Veri ambarından veya kaynaklardan mevcut veriler toplanır, açıklayıcı istatistikler (ortalama, standart sapma, dağılımlar) çıkarılır ve veri kalitesi sorunları tespit edilir.</li>
+                <li><strong>3. Veri Hazırlama (Data Preparation):</strong> Tüm proje süresinin yaklaşık <strong>%60 ila %80’ini</strong> alan en kritik aşamadır. Eksik verilerin doldurulması (imputation), gürültülü verilerin ve aykırı değerlerin (outliers) temizlenmesi, kategorik verilerin sayısallaştırılması (One-Hot / Label Encoding), öznitelik mühendisliği (Feature Engineering) ve normalizasyon (Min-Max / Z-Score Scaling) işlemleri bu adımda yapılır.</li>
+                <li><strong>4. Modelleme (Modeling):</strong> Problemin doğasına uygun makine öğrenmesi ve veri madenciliği algoritmaları seçilir, hiperparametre optimizasyonu yapılır ve modeller eğitim/test veri setleri üzerinde eğitilir.</li>
+                <li><strong>5. Değerlendirme (Evaluation):</strong> Kurulan modelin hem matematiksel başarı metrikleri (Accuracy, Precision, Recall, F1-Score, ROC-AUC, RMSE) hem de 1. adımda belirlenen iş hedeflerini karşılayıp karşılamadığı test edilir.</li>
+                <li><strong>6. Canlıya Alma / Dağıtım (Deployment):</strong> Başarılı olan model, sadece bir rapor olarak kalmaz; API servisi veya veri ambarı üzerindeki otomatik skorlama görevi (MLOps) olarak canlı üretim ortamına entegre edilir ve performansı sürekli izlenir.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 5 -->
+            <section class="article-section-card" id="bolum-5">
+              <div class="section-header-row">
+                <div class="section-num-badge">05</div>
+                <h3>Veri Madenciliği Görevleri, Algoritmaları ve Matematiksel Modeller</h3>
+              </div>
+              <p class="article-prose">
+                Veri madenciliği modelleri temel olarak geçmiş verilerden geleceği öngören <strong>Tahminleyici (Predictive / Denetimli Öğrenme)</strong> modeller ve verideki mevcut içsel yapıyı ortaya çıkaran <strong>Tanımlayıcı (Descriptive / Denetimsiz Öğrenme)</strong> modeller olmak üzere iki ana gruba ayrılır.
+              </p>
+
+              <h4 class="article-subheading">1. Sınıflandırma (Classification) ve Regresyon (Tahminleyici Modeller)</h4>
+              <p class="article-prose">
+                Etiketlenmiş geçmiş verilerden öğrenerek yeni gelen bir kaydın hangi kategorik sınıfa ait olduğunu (<strong>Sınıflandırma</strong> - örn. Kredi başvurusu: <em>Onay / Red</em>, E-posta: <em>Spam / Normal</em>) veya sürekli bir sayısal değeri (<strong>Regresyon</strong> - örn. Konut fiyat tahmini, gelecek ayki satış adedi) tahmin eder.
+              </p>
+              <ul class="article-topic-list">
+                <li><strong>Karar Ağaçları (Decision Trees - ID3, C4.5, CART) ve Topluluk Modelleri:</strong> Veriyi <em>Bilgi Kazancı (Information Gain / Entropy)</em> veya <em>Gini Safsızlık (Gini Impurity)</em> indekslerine göre dallara ayırarak insan tarafından kolayca yorumlanabilen kurallar üretir. Çok sayıda karar ağacının birleşimiyle kurulan <strong>Random Forest (Rastgele Orman)</strong>, <strong>XGBoost</strong> ve <strong>LightGBM</strong> algoritmaları tablosal veri madenciliğinde en yüksek doğruluğu sunar.</li>
+                <li><strong>Destek Vektör Makineleri (SVM), Naive Bayes ve Lojistik Regresyon:</strong> Sınıflar arasındaki marjı maksimize eden hiper-düzlemler (SVM) veya Bayes olasılık teoremine dayanan istatistiksel sınıflandırıcılar özellikle metin madenciliği ve risk skorlamada yaygın kullanılır.</li>
+              </ul>
+
+              <h4 class="article-subheading">2. Kümeleme (Clustering - Tanımlayıcı Modeller)</h4>
+              <p class="article-prose">
+                Önceden tanımlanmış hiçbir sınıf etiketinin bulunmadığı verilerde; birbirine benzer özellik gösteren kayıtları aynı gruba (kümeye), benzemeyenleri ise farklı gruplara ayıran denetimsiz öğrenme tekniğidir (örneğin <strong>RFM Analizi ile Müşteri Segmentasyonu</strong>).
+              </p>
+              <ul class="article-topic-list">
+                <li><strong>K-Ortalamalar (K-Means):</strong> Veriyi önceden belirlenen <em>k</em> adet küme merkezine (centroid) Öklid uzaklığını minimize edecek şekilde iteratif olarak atar. Hızlıdır ancak küresel olmayan şekillerde ve aykırı değerlerde hassastır.</li>
+                <li><strong>Hiyerarşik Kümeleme (AGNES / DIANA) ve DBSCAN:</strong> Verileri bir ağaç diyagramı (<strong>Dendrogram</strong>) üzerinde birleştirici (agglomerative) veya bölücü (divisive) olarak gruplar. Yoğunluk tabanlı <strong>DBSCAN</strong> ise küme sayısını baştan istemez, keyfi şekillerdeki kümeleri bulabilir ve gürültülü (noise) noktaları otomatik dışlar.</li>
+              </ul>
+
+              <h4 class="article-subheading">3. Birliktelik Kuralları (Association Rule Mining) ve Pazar Sepeti Analizi</h4>
+              <p class="article-prose">
+                Perakende ve e-ticaret veri ambarlarındaki milyarlarca işlem (transaction) kaydı içinden <strong>"Birlikte satın alınan ürünlerin"</strong> veya birlikte gerçekleşen olayların keşfedilmesidir (<em>X</em> &rArr; <em>Y</em>: <em>X ürününü alan müşteri Y ürününü de alır</em>). En bilinen algoritmaları <strong>Apriori</strong> ve <strong>FP-Growth (Frequent Pattern Growth)</strong> algoritmalarıdır. Bir kuralın gücü üç temel matematiksel metrikle ölçülür:
+              </p>
+              <div class="code-block-wrap"><pre><code># Birliktelik Kuralları (Association Rules) Temel Metrik Formülleri:
+
+1. Destek (Support): X ve Y ürünlerinin tüm alışverişler içinde birlikte görülme olasılığı
+   Support(X => Y) = P(X ∩ Y) = (X ve Y'yi birlikte içeren sepet sayısı) / (Toplam sepet sayısı)
+
+2. Güven (Confidence): X ürününü alanların yüzde kaçının Y ürününü de aldığı (Koşullu Olasılık)
+   Confidence(X => Y) = P(Y | X) = Support(X ∩ Y) / Support(X)
+
+3. İlgi / Kaldıraç (Lift): X'in satılmasının Y'nin satılma olasılığını kaç kat artırdığı
+   Lift(X => Y) = Confidence(X => Y) / Support(Y)
+   * Lift > 1 ise: X ve Y arasında pozitif korelasyon (birlikte satılma eğilimi) vardır.
+   * Lift = 1 ise: X ve Y birbirinden bağımsızdır.
+   * Lift < 1 ise: X ve Y arasında negatif korelasyon (ikame etkisi) vardır.</code></pre></div>
+
+              <h4 class="article-subheading">4. Anomali (Aykırı Değer) Tespiti (Anomaly / Outlier Detection)</h4>
+              <p class="article-prose article-prose-no-bottom">
+                Normal veri dağılımından önemli ölçüde sapan nadir kayıtların (<strong>Isolation Forest</strong>, <strong>Local Outlier Factor - LOF</strong> veya <strong>Autoencoder</strong> sinir ağları ile) yakalanmasıdır. Kredi kartı sahtekarlığı (Fraud Detection), siber saldırı/ağ sızma tespiti (IDS) ve endüstriyel makinelerde kestirimci bakım (arıza tespiti) alanlarında hayati rol oynar.
+              </p>
+            </section>
+
+            <!-- BÖLÜM 6 -->
+            <section class="article-section-card" id="bolum-6">
+              <div class="section-header-row">
+                <div class="section-num-badge">06</div>
+                <h3>Veri Kalitesi, Yönetişim ve Analitik Performans Optimizasyonu</h3>
+              </div>
+              <p class="article-prose">
+                Bilgisayar bilimlerinin en temel yasalarından biri <strong>"GIGO" (Garbage In, Garbage Out — Çöp Girerse Çöp Çıkar)</strong> ilkesidir. Dünyanın en gelişmiş veri madenciliği algoritmasını veya derin öğrenme modelini kullansanız dahi, veri ambarınızdan gelen veri eksik, mükerrer, tutarsız veya yanlı (biased) ise modelin üreteceği sonuçlar işletmeyi yanlış kararlara sürükleyecektir.
+              </p>
+
+              <h4 class="article-subheading">A. Kurumsal Veri Yönetişimi (Data Governance) ve Veri Kalitesi Boyutları</h4>
+              <ul class="article-topic-list">
+                <li><strong>Veri Kalitesinin 6 Sütunu:</strong> Kurumsal veri ambarlarında veri kalitesi; <strong>Tamlık (Completeness)</strong>, <strong>Doğruluk (Accuracy)</strong>, <strong>Tutarlılık (Consistency)</strong>, <strong>Geçerlilik (Validity)</strong>, <strong>Tekillik (Uniqueness)</strong> ve <strong>Zamanındalık (Timeliness)</strong> metrikleriyle sürekli denetlenir.</li>
+                <li><strong>Tek Doğru Kaynak (Single Source of Truth - SSOT) ve Ana Veri Yönetimi (MDM):</strong> Kurum içindeki her departmanın aynı toplantıya farklı "ciro" veya "aktif müşteri sayısı" rakamlarıyla gelmesini önlemek için merkezi bir <strong>Veri Kataloğu (Data Catalog)</strong>, <strong>Veri Soy Ağacı (Data Lineage)</strong> ve <strong>Ana Veri Yönetimi (Master Data Management)</strong> mimarisi kurulur.</li>
+              </ul>
+
+              <h4 class="article-subheading">B. Veri Ambarlarında Sorgu ve Depolama Optimizasyonu</h4>
+              <ul class="article-topic-list">
+                <li><strong>Sütun Bazlı Depolama (Columnar Storage):</strong> Geleneksel OLTP veritabanları satır bazlı (row-oriented) kayıt yaparken; modern veri ambarları (ve Parquet, ORC gibi formatlar) veriyi diskte <strong>sütun bazlı (column-oriented)</strong> saklar. Analitik bir sorguda 100 sütunlu bir olgu tablosunun yalnızca 3 sütunu (örn. <code>Bolge</code>, <code>Yil</code>, <code>Tutar</code>) toplanmak istendiğinde, diskten tüm satırlar yerine sadece ilgili 3 sütun okunur ve aynı veri tipindeki değerler yan yana durduğu için <strong>10 katına varan sıkıştırma (compression) ve G/Ç (I/O) hızı</strong> elde edilir.</li>
+                <li><strong>Tablo Bölümleme (Partitioning) ve Kümeleme (Clustering):</strong> Milyarlarca satırlık olgu tabloları tarihsel sütunlara göre (örneğin Yıl/Ay bazında) fiziksel alt bölümlere (partitions) ayrılır. Sorguya <code>WHERE Islem_Tarihi BETWEEN '2026-01-01' AND '2026-03-31'</code> koşulu eklendiğinde, motor diğer yıllara ait bölümleri hiç taramaz (<strong>Partition Pruning</strong>).</li>
+                <li><strong>Bit Eşlem İndeksler (Bitmap Indexes) ve Materyalize Görünümler (Materialized Views):</strong> Düşük kardinaliteli (az sayıda tekil değer içeren) boyut sütunlarında bit düzeyinde mantıksal <code>AND/OR</code> işlemleri yapan Bitmap indeksler kullanılır; sık tekrarlanan ağır <code>GROUP BY</code> özet sorguları ise önceden hesaplanmış <strong>Materialized View</strong> tablolarında hazır tutulur.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 7 -->
+            <section class="article-section-card" id="bolum-7">
+              <div class="section-header-row">
+                <div class="section-num-badge">07</div>
+                <h3>Büyük Veri Analitiğinde Hukuki Uyum (KVKK), Anonimleştirme ve Etik</h3>
+              </div>
+              <p class="article-prose">
+                Veri ambarlarında müşteri davranışlarının yıllar boyunca saklanması ve veri madenciliği algoritmalarıyla bireylerin tüketim, sağlık veya finansal eğilimlerinin profillenmesi; <strong>6698 sayılı Kişisel Verilerin Korunması Kanunu (KVKK)</strong> ve <strong>GDPR</strong> kapsamında kritik hukuki yükümlülükler doğurmaktadır.
+              </p>
+
+              <h4 class="article-subheading">Veri Ambarı ve Veri Madenciliği Süreçlerinde KVKK / Mahremiyet İlkeleri</h4>
+              <ul class="article-topic-list">
+                <li>
+                  <strong>1. Amaçla Sınırlılık, Saklama Süreleri ve Anonimleştirme:</strong> Operasyonel sistemlerde yasal saklama süresi dolan kişisel verilerin, veri ambarında analitik ve istatistiksel amaçlarla süresiz tutulabilmesi için bu verilerin gerçek kişilerle bağının geri döndürülemez biçimde koparılması —yani <strong>Anonim Hale Getirilmesi (KVKK m. 7 ve m. 28/1-b)</strong>— gerekir. KVKK m. 28/1-b uyarınca, <em>"kişisel verilerin resmi istatistik ile anonim hale getirilmek suretiyle araştırma, planlama ve istatistik gibi amaçlarla işlenmesi"</em> Kanun kapsamı dışındadır.
+                </li>
+                <li>
+                  <strong>2. Matematiksel Mahremiyet Modelleri (<em>k</em>-Anonimlik, <em>l</em>-Çeşitlilik ve Diferansiyel Mahremiyet):</strong> Bir veri tablosundan yalnızca <code>Ad_Soyad</code> ve <code>TC_Kimlik_No</code> sütunlarını silmek (maskeleme/takma ad kullanma - <em>pseudonymization</em>) veriyi anonim yapmaz! Doğum tarihi, posta kodu ve cinsiyet gibi <strong>Yarı-Tanımlayıcıların (Quasi-Identifiers)</strong> çapraz eşleştirilmesiyle kişinin kimliği yeniden tespit edilebilir (Re-identification Attack). Bunu önlemek için veri ambarlarında üç ileri teknik uygulanır:
+                  <ul class="nested-sublist">
+                    <li><strong><em>k</em>-Anonimlik (<em>k</em>-Anonymity):</strong> Veri setindeki her bir kaydın, yarı-tanımlayıcı nitelikler bakımından en az <em>k</em>-1 adet diğer kayıtla birebir ayırt edilemez (aynı eşdeğerlik sınıfında) olmasını sağlar.</li>
+                    <li><strong><em>l</em>-Çeşitlilik (<em>l</em>-Diversity) ve <em>t</em>-Yakınlık (<em>t</em>-Closeness):</strong> Aynı eşdeğerlik grubundaki hassas niteliklerin (örneğin hastalık teşhisi veya gelir grubu) en az <em>l</em> farklı değere sahip olmasını sağlayarak grup bazlı çıkarım saldırılarını engeller.</li>
+                    <li><strong>Diferansiyel Mahremiyet (Differential Privacy):</strong> Sorgu sonuçlarına veya eğitim verilerine kontrollü istatistiksel gürültü (Laplace veya Gauss gürültüsü) ekleyerek, genel veri madenciliği örüntülerini bozmadan tekil bir bireyin veri setinde yer alıp almadığının anlaşılmasını matematiksel olarak imkansız kılar.</li>
+                  </ul>
+                </li>
+                <li>
+                  <strong>3. Otomatik Profilleme ve İtiraz Hakkı (KVKK m. 11/1-g):</strong> Veri madenciliği algoritmalarıyla yapılan müşteri skorlama ve profilleme faaliyetlerinin birey aleyhine hukuki bir sonuç doğurması halinde, ilgili kişinin münhasıran otomatik sistemlerle analiz edilmeye itiraz etme hakkı korunmalı ve algoritmik modellerde ayrımcılığa yol açan önyargılı (biased) değişkenler veri hazırlama aşamasında temizlenmelidir.
+                </li>
+              </ul>
+
+              <p class="article-prose article-prose-summary">
+                Sonuç olarak <strong>Veri Ambarı ve Veri Madenciliği</strong>, modern kurumların geçmişin dağınık verilerini bütünleştirerek geleceği öngören stratejik bilgeliğe dönüştürdüğü iki ayrılmaz mühendislik disiplinidir. Sağlam bir boyutsal veri ambarı mimarisi üzerine inşa edilmeyen veri madenciliği projeleri veri kalitesizliğine mahkum olurken; veri madenciliği ve ileri analitikle taçlandırılmayan veri ambarları ise yalnızca pasif birer dijital arşiv olarak kalmaktadır.
+              </p>
+            </section>
+
+            <!-- Diğer Makaleler -->
+            <div class="other-articles-box">
+              <div class="other-articles-header">
+                <h5>Diğer Makalelerim</h5>
+                <span class="other-articles-count">10 Makale</span>
+              </div>
+              <div class="other-articles-grid">
+                <a class="other-article-link" href="bilisim_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Hukuk &amp; Bilişim</span>
+                      <span class="other-article-num">01</span>
+                    </div>
+                    <h6>Bilişim Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="kvkk.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">KVKK &amp; Güvenlik</span>
+                      <span class="other-article-num">02</span>
+                    </div>
+                    <h6>Kişisel Verileri Koruma Kanunu</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="btk.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Regülasyon</span>
+                      <span class="other-article-num">03</span>
+                    </div>
+                    <h6>Bilgi Teknolojileri ve İletişim Kurumu</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="verilerin_islenmesi.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Veri Yönetimi</span>
+                      <span class="other-article-num">04</span>
+                    </div>
+                    <h6>Verilerin İşlenmesi</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="yapay_zeka_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yapay Zeka &amp; Regülasyon</span>
+                      <span class="other-article-num">05</span>
+                    </div>
+                    <h6>Yapay Zeka Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="siber_guvenlik_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Siber Güvenlik &amp; Hukuk</span>
+                      <span class="other-article-num">06</span>
+                    </div>
+                    <h6>Siber Güvenlik Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="yazilim_gelistirme_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yazılım &amp; Fikri Mülkiyet</span>
+                      <span class="other-article-num">07</span>
+                    </div>
+                    <h6>Yazılım Geliştirme Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="git_ve_github.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yazılım Mühendisliği &amp; DevOps</span>
+                      <span class="other-article-num">08</span>
+                    </div>
+                    <h6>Git ve GitHub</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link active" href="veri_ambari_ve_veri_madenciligi.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Veri Bilimi &amp; İş Zekası</span>
+                      <span class="other-article-num">09</span>
+                    </div>
+                    <h6>Veri Ambarı ve Veri Madenciliği</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Şu An Okuyorsunuz</span>
+                    <span class="fa fa-check-circle"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="surec_otomasyonu_ve_verimlilik.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Dijital Dönüşüm &amp; Mühendislik</span>
+                      <span class="other-article-num">10</span>
+                    </div>
+                    <h6>Süreç Otomasyonu ve Verimlilik</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer class="section section-fluid footer-minimal context-dark">
+      <div class="bg-gray-15">
+        <div class="container-fluid">
+          <div class="footer-minimal-bottom-panel text-sm-left">
+            <div class="row row-10 align-items-md-center">
+              <div class="col-sm-6 col-md-4 text-sm-right text-md-center">
+                <ul class="list-inline list-inline-sm footer-social-list-2">
+                  <li><a class="icon fa fa-linkedin" href="https://www.linkedin.com/in/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"></a></li>
+                  <li><a class="icon fa fa-twitter" href="https://x.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"></a></li>
+                  <li><a class="icon fa fa-youtube" href="https://www.youtube.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="YouTube"></a></li>
+                  <li><a class="icon fa fa-instagram" href="https://www.instagram.com/serhat.nehir" target="_blank" rel="noopener noreferrer" aria-label="Instagram"></a></li>
+                  <li><a class="icon fa fa-facebook" href="https://www.facebook.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="Facebook"></a></li>
+                  <li><a class="icon fa fa-telegram" href="https://t.me/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-md-4 order-sm-first">
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year">2026</span> <span>Serhat Nehir</span></p>
+              </div>
+              <div class="col-sm-6 col-md-4 text-md-right">
+                <span>Tüm hakları Saklıdır.</span> <span>Tasarım Serhat Nehir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

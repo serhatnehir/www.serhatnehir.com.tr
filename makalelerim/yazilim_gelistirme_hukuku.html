@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html class="wide" lang="tr">
+  <head>
+    <title>Yazılım Geliştirme Hukuku | Serhat Nehir</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.serhatnehir.com.tr/makalelerim/yazilim_gelistirme_hukuku.html">
+    <meta name="description" content="Yazılım Geliştirme Hukuku: FSEK kapsamında kaynak kodun korunması, çalışan ve freelancer telif devri, açık kaynak lisansları (GPL, MIT), SaaS/SLA sözleşmeleri ve tersine mühendislik - Serhat Nehir" />
+    <!-- Open Graph / Sosyal Medya Paylaşım Etiketleri -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Serhat Nehir">
+    <meta property="og:title" content="Yazılım Geliştirme Hukuku | Serhat Nehir">
+    <meta property="og:description" content="5846 sayılı FSEK kapsamında bilgisayar programlarının korunması, yazılım sözleşmeleri, açık kaynak lisans uyumu, SaaS mimarisi ve tersine mühendislik sınırları.">
+    <meta property="og:url" content="https://www.serhatnehir.com.tr/makalelerim/yazilim_gelistirme_hukuku.html">
+    <meta property="og:image" content="https://www.serhatnehir.com.tr/images/makaleler/yazilim_gelistirme_hukuku.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Yazılım Geliştirme Hukuku | Serhat Nehir">
+    <meta name="twitter:description" content="Yazılım Geliştirme Hukuku, kaynak kod telif hakları, açık kaynak lisansları, SaaS/SLA sözleşmeleri ve yazılımcıların hukuki sorumluluğu.">
+    <meta name="twitter:image" content="https://www.serhatnehir.com.tr/images/makaleler/yazilim_gelistirme_hukuku.jpg">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Yapısal Veri (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Yazılım Geliştirme Hukuku | Serhat Nehir",
+      "description": "5846 sayılı FSEK kapsamında bilgisayar programlarının korunması, yazılım sözleşmeleri, açık kaynak lisans uyumu, SaaS mimarisi ve tersine mühendislik sınırları.",
+      "image": "https://www.serhatnehir.com.tr/images/makaleler/yazilim_gelistirme_hukuku.jpg",
+      "author": {
+            "@type": "Person",
+            "name": "Serhat Nehir",
+            "url": "https://www.serhatnehir.com.tr/"
+      },
+      "publisher": {
+            "@type": "Person",
+            "name": "Serhat Nehir"
+      },
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.serhatnehir.com.tr/makalelerim/yazilim_gelistirme_hukuku.html"
+      },
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "inLanguage": "tr-TR"
+}
+    </script>
+  </head>
+
+  <body class="article-page">
+    <div id="scroll-progress"></div>
+
+    <!-- Üst Bar -->
+    <header class="article-topbar">
+      <div class="container article-topbar-inner">
+        <a href="../index.html" aria-label="Serhat Nehir Ana Sayfa"><img src="../images/logo_siyah.png" alt="Serhat Nehir Logo" width="180" height="40"/></a>
+        <a class="back-home-btn" href="../index.html#makalelerim" aria-label="Makalelere Dön"><span class="fa fa-angle-left"></span> Makalelere Dön</a>
+      </div>
+    </header>
+
+    <!-- Başlık (Hero) Alanı -->
+    <section class="article-hero">
+      <div class="container">
+        <span class="article-category-pill">Yazılım &amp; Fikri Mülkiyet</span>
+        <h1>Yazılım Geliştirme Hukuku</h1>
+        <p class="text-width-large">5846 sayılı FSEK kapsamında kaynak kodun korunması, çalışan ve serbest (freelance) yazılımcılarla hak devri, açık kaynak lisans uyumu, SaaS/SLA sözleşmeleri ve yazılımda ayıplı ifa sorumluluğu.</p>
+        <div class="article-author-bar">
+          <img class="article-author-avatar" src="../images/sn.jpg" alt="Serhat Nehir" width="48" height="48" loading="lazy" />
+          <div class="article-author-info">
+            <h6>Serhat Nehir</h6>
+            <span>Yazılım Geliştirici &amp; Yazar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ana İçerik -->
+    <main class="article-main-wrap">
+      <div class="container">
+        <div class="row">
+          <!-- Sol Menü: İçindekiler -->
+          <div class="col-lg-4">
+            <aside class="toc-card">
+              <div class="toc-title">İçindekiler</div>
+              <ul class="toc-list">
+                <li><a href="#bolum-1">1. Yazılımın Hukuki Niteliği: Telif Hakkı (FSEK) ve Patent Ayrımı</a></li>
+                <li><a href="#bolum-2">2. Kodun Sahibi Kimdir? Çalışan, Freelancer ve Şirket İlişkileri</a></li>
+                <li><a href="#bolum-3">3. Yazılım Geliştirme Sözleşmeleri: Agile, Waterfall, SaaS ve SLA</a></li>
+                <li><a href="#bolum-4">4. Açık Kaynak (Open Source) Lisansları ve Ticari Uyum Riskleri</a></li>
+                <li><a href="#bolum-5">5. Tersine Mühendislik (Decompilation), API Telifleri ve Yedekleme</a></li>
+                <li><a href="#bolum-6">6. Yazılımda Ayıplı İfa (Bug/Güvenlik Açığı) ve Sorumsuzluk Kayıtları</a></li>
+                <li><a href="#bolum-7">7. Güvenli Yazılım Geliştirme Yaşam Döngüsü (SDLC) ve Hukuki Uyum</a></li>
+              </ul>
+            </aside>
+          </div>
+
+          <!-- Sağ Sütun: Makale Bölümleri -->
+          <div class="col-lg-8">
+
+            <!-- BÖLÜM 1 -->
+            <section class="article-section-card" id="bolum-1">
+              <div class="section-header-row">
+                <div class="section-num-badge">01</div>
+                <h3>Yazılımın Hukuki Niteliği: Telif Hakkı (FSEK) ve Patent Ayrımı</h3>
+              </div>
+              <p class="article-prose">
+                Yazılım mühendisliği, soyut matematiksel algoritmaların ve iş kurallarının programlama dilleri aracılığıyla somut komut dizilerine dönüştürüldüğü entelektüel bir üretim sürecidir. Hukuk düzeni, ekonomik değeri milyarlarca dolara ulaşabilen bu gayrimaddi (fiziksel varlığı olmayan) ürünleri korumak için birincil olarak <strong>fikri mülkiyet hukukunu (telif haklarını)</strong>, istisnai durumlarda ise <strong>sınai mülkiyet hukukunu (patent ve ticari sır korumasını)</strong> devreye sokar.
+              </p>
+              <p class="article-prose">
+                Türk hukukunda bilgisayar programlarının korunması, <strong>5846 sayılı Fikir ve Sanat Eserleri Kanunu (FSEK)</strong> kapsamında düzenlenmiştir. FSEK m. 2/1-1 uyarınca; <em>"Herhangi bir şekilde dil ve yazı ile ifade olunan eserler ve her biçim altında ifade edilen bilgisayar programları ve bir sonraki aşamada program sonucu doğurması koşuluyla bunların hazırlık tasarımları"</em>, <strong>İlim ve Edebiyat Eseri</strong> kategorisinde korunmaktadır.
+              </p>
+
+              <h4 class="article-subheading">FSEK Kapsamında Korunan ve Korunmayan Unsurlar</h4>
+              <ul class="article-topic-list">
+                <li><strong>Kaynak Kod (Source Code) ve Nesne Kodu (Object Code):</strong> Yazılımcının Python, C#, Java, Rust veya JavaScript gibi dillerde yazdığı insan tarafından okunabilir <strong>kaynak kod</strong> ile derleyici (compiler) tarafından makine diline (0 ve 1’lere) çevrilmiş <strong>nesne kodu / çalıştırılabilir dosya (.exe, .dll, bytecode)</strong> doğrudan eser koruması altındadır. Korumadan yararlanmak için tescil şartı yoktur; kodun yazıldığı (somutlaştığı) anda telif koruması kendiliğinden doğar.</li>
+                <li><strong>Hazırlık Tasarımları:</strong> Bir sonraki aşamada bilgisayar programı sonucu doğurması koşuluyla; yazılım mimarisi şemaları, detaylı akış diyagramları (flowcharts), veri tabanı şemaları ve sistem analiz dokümanları da eser sayılır.</li>
+                <li><strong>Algoritmalar ve Fikirler İstisnası (FSEK m. 2/son):</strong> Fikri mülkiyet hukukunun evrensel ilkesi uyarınca <em>"fikirler değil, ifade ediliş biçimleri korunur"</em>. FSEK m. 2/son maddesi uyarınca; bir bilgisayar programının herhangi bir öğesine temel oluşturan <strong>fikirler ve ilkeler (algoritmalar, iş mantığı, matematiksel formüller)</strong> ile arayüzlere temel oluşturan ilkeler telif korumasından yararlanamaz. Örneğin, bir "hızlı sıralama (quicksort) algoritması" veya "tek tıkla sepette indirim hesaplama mantığı" tekel altına alınamaz; ancak o mantığın spesifik olarak satır satır yazılmış kodu kopyalanamaz.</li>
+                <li><strong>Grafik Kullanıcı Arayüzleri (GUI):</strong> Avrupa Birliği Adalet Divanı (ABAD) içtihatları ve Yargıtay kararları uyarınca, bir yazılımın grafik arayüzü (ekran tasarımı, ikonlar, menü dizilimi) "bilgisayar programı" olarak değil, şartları taşıyorsa <strong>"güzel sanat eseri"</strong> veya 6769 sayılı Sınai Mülkiyet Kanunu (SMK) kapsamında <strong>"Tasarım"</strong> ya da haksız rekabet hükümleri çerçevesinde korunur.</li>
+              </ul>
+
+              <h4 class="article-subheading">Yazılımlar Patentlenebilir mi? (SMK m. 82 ve EPC m. 52)</h4>
+              <p class="article-prose article-prose-no-bottom">
+                6769 sayılı Sınai Mülkiyet Kanunu m. 82/2-c ve Avrupa Patent Sözleşmesi (EPC m. 52) uyarınca, bilgisayar programları <strong>"salt bilgisayar programı olarak"</strong> buluş niteliğinde sayılmaz ve patentlenemez. Ancak geliştirilen yazılım; bir donanımı kontrol ederek, endüstriyel bir süreci optimize ederek veya bilgisayarın kendi iç işleyişinde (bellek yönetimi, veri sıkıştırma, kriptografik donanım hızlandırma gibi) standart fiziksel etkileşimlerin ötesinde <strong>"İleri Bir Teknik Etki" (Further Technical Effect)</strong> yaratıyor ve teknik bir problemi teknik bir yöntemle çözüyorsa, <strong>"Bilgisayar Uygulamalı Buluş" (Computer-Implemented Invention - CII)</strong> sıfatıyla patent koruması alabilir.
+              </p>
+            </section>
+
+            <!-- BÖLÜM 2 -->
+            <section class="article-section-card" id="bolum-2">
+              <div class="section-header-row">
+                <div class="section-num-badge">02</div>
+                <h3>Kodun Sahibi Kimdir? Çalışan, Freelancer ve Şirket İlişkileri</h3>
+              </div>
+              <p class="article-prose">
+                Yazılım sektöründeki en büyük hukuki uyuşmazlıklar, projenin başarıya ulaşmasının ardından <strong>"Kaynak kod üzerindeki mali hakların kime ait olduğu"</strong> noktasında patlak vermektedir. Yazılımcının bordrolu bir çalışan olması ile dışarıdan hizmet veren bağımsız bir geliştirici (freelancer / yüklenici yazılım evi) olması arasında uçurum niteliğinde hukuki farklar vardır.
+              </p>
+
+              <div class="law-subgrid">
+                <div class="law-box">
+                  <span class="law-box-tag">1. Bordrolu Çalışanlar (FSEK m. 18/2)</span>
+                  <p>İş sözleşmesi kapsamında ve görev tanımı doğrultusunda çalışan bir yazılım mühendisinin mesai içinde geliştirdiği kodlar üzerindeki <strong>mali hakları kullanma yetkisi doğrudan işverene (şirkete) aittir</strong>. (Çalışanın "eser sahibi olarak adının belirtilmesi" gibi manevi hakları ise devredilemez şekilde kendisinde kalır.)</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">2. Freelancer ve Ajanslar (FSEK m. 52)</span>
+                  <p>Sipariş üzerine dışarıdan bir freelancer’a veya yazılım firmasına kod yazdırılması halinde, fatura ödenmiş olsa dahi <strong>mali haklar kendiliğinden müşteriye geçmez!</strong> FSEK m. 52 uyarınca yazılı ve tek tek hakları (işleme, çoğaltma, yayma, temsil, umuma iletim) sayan bir <strong>Mali Hak Devir Sözleşmesi</strong> yapılmamışsa, kodun mülkiyeti yazılımcıda kalır.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">3. Gelecekteki Eserler (FSEK m. 48/3)</span>
+                  <p>FSEK m. 48/3 uyarınca, henüz meydana getirilmemiş (tamamlanmamış) bir yazılım üzerindeki mali hakların baştan devredilmesi <strong>hukuken batıldır (geçersizdir)</strong>. Sözleşmede yalnızca "hakları devretme vaadi (taahhüdü)" yer alabilir; yazılım tamamlandığında mutlaka ıslak imzalı veya nitelikli e-imzalı bir <strong>Teslim ve Hak Devir Protokolü</strong> imzalanmalıdır.</p>
+                </div>
+              </div>
+
+              <h4 class="article-subheading">Yan Projeler (Side Projects), Rekabet Yasağı ve Gizlilik (NDA)</h4>
+              <ul class="article-topic-list">
+                <li><strong>Mesai Dışı Geliştirilen Kodlar:</strong> Bir yazılımcının kendi kişisel bilgisayarıyla, mesai saatleri dışında ve işverenin ticari sırlarını/kaynaklarını kullanmaksızın işverenin faaliyet alanı dışında geliştirdiği bağımsız projeler (side projects) üzerindeki tüm haklar yazılımcının kendisine aittir. Ancak iş sözleşmesinde geçerli bir "münhasırlık" veya yan iş yasağı hükmü varsa iş hukuku yönünden sorumluluk doğabilir.</li>
+                <li><strong>Rekabet Yasağı Sözleşmesi (TBK m. 444-447):</strong> Yazılımcının işten ayrıldıktan sonra rakip bir firmada çalışmasını veya rakip yazılım geliştirmesini kısıtlayan rekabet yasağı şartlarının geçerli olabilmesi için; yazılı olması, işçinin müşteri çevresi veya üretim sırlarına vakıf olması ve <strong>yer, zaman (en fazla 2 yıl) ve işin türü bakımından</strong> işçinin ekonomik geleceğini hakkaniyete aykırı olarak tehlikeye düşürmeyecek şekilde sınırlandırılmış olması şarttır.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 3 -->
+            <section class="article-section-card" id="bolum-3">
+              <div class="section-header-row">
+                <div class="section-num-badge">03</div>
+                <h3>Yazılım Geliştirme Sözleşmeleri: Agile, Waterfall, SaaS ve SLA</h3>
+              </div>
+              <p class="article-prose">
+                Yazılım projeleri, hukuki nitelikleri itibarıyla genellikle 6098 sayılı Türk Borçlar Kanunu (TBK m. 470 vd.) kapsamındaki <strong>"Eser Sözleşmesi" (İstisna Akdi)</strong>, FSEK kapsamındaki <strong>"Lisans/Devir Sözleşmesi"</strong> ve bakım-destek süreçlerini içeren <strong>"Hizmet Sözleşmesi"</strong> unsurlarını bünyesinde barındıran <em>karma nitelikli sözleşmelerdir</em>.
+              </p>
+
+              <h4 class="article-subheading">A. Geliştirme Metodolojisine Göre Sözleşme Kurgusu: Waterfall vs. Agile</h4>
+              <ul class="article-topic-list">
+                <li><strong>Çağlayan (Waterfall) Modeli ve Sabit Fiyatlı Eser Sözleşmesi:</strong> İhtiyaç analizinin ve teknik şartnamenin (SRS - Software Requirements Specification) en başta %100 netleştirildiği projelerde uygulanır. Yüklenici, şartnamede tanımlanan yazılımı belirli bir tarihte ve sabit bir bedelle (Fixed-Price) eksiksiz teslim etme <strong>"sonuç taahhüdü"</strong> altındadır. Kapsam değişiklikleri <em>Değişiklik Yönetimi (Change Request - CR)</em> protokolüne ve ek ücrete tabidir.</li>
+                <li><strong>Çevik (Agile / Scrum) Model ve Zaman/Malzeme (Time &amp; Materials) Sözleşmeleri:</strong> Gereksinimlerin 2-4 haftalık <em>Sprint</em>’ler halinde evrildiği Agile projelerde, sabit kapsamlı klasik sözleşmeler kriz üretir. Agile sözleşmelerde; her bir Sprint sonunda yapılan <em>Sprint Review</em> toplantıları <strong>"kısmi kabul"</strong> mekanizmasına bağlanmalı, ürün iş listesinin (Product Backlog) önceliklendirilmesinde Müşteri Ürün Sahibinin (Product Owner) gecikmeleri ve onay süreçleri sözleşmede açıkça tanımlanmalıdır.</li>
+              </ul>
+
+              <h4 class="article-subheading">B. Bulut Tabanlı Yazılımlar (SaaS), SLA ve Kaynak Kod Emaneti (Source Code Escrow)</h4>
+              <ul class="article-topic-list">
+                <li><strong>SaaS (Software as a Service) Sözleşmeleri:</strong> Klasik "On-Premise" (müşteri sunucusuna kurulan) yazılımlarda müşteriye çoğaltma ve kullanım lisansı verilirken; SaaS modelinde yazılımın kopyası müşteriye teslim edilmez, internet üzerinden erişilen bir <strong>bulut hizmeti aboneliği</strong> sunulur. Bu nedenle SaaS sözleşmelerinin kalbini; <strong>Veri İşleme Sözleşmesi (DPA / KVKK uyumu)</strong>, veri taşınabilirliği (müşterinin aboneliği bittiğinde verilerini JSON/CSV/SQL formatında geri alabilme hakkı) ve kesintisiz erişim taahhütleri oluşturur.</li>
+                <li><strong>Hizmet Seviyesi Sözleşmesi (SLA - Service Level Agreement):</strong> Sistemin yıllık/aylık <strong>ayakta kalma oranını (Uptime - örn. %99.9)</strong>, kritik hatalara (Severity 1 - Sistem Çökmesi) müdahale süresini (Response Time) ve çözüm süresini (Resolution Time) düzenler. SLA hedeflerinin tutturulamaması halinde müşteriye uygulanacak <strong>Hizmet Kredisi (Service Credit / Fatura İndirimi)</strong> ve fesih eşikleri matematiksel formüllerle sözleşmeye eklenir.</li>
+                <li><strong>Kaynak Kod Emanet Sözleşmesi (Source Code Escrow):</strong> Bankalar, telekom operatörleri veya büyük kurumsal şirketler, iş süreçleri için kritik bir yazılımı tek bir yazılım evinden lisansladıklarında; yazılım firmasının iflas etmesi, faaliyetini durdurması veya bakım yükümlülüğünü ağır şekilde ihlal etmesi riskine karşı <strong>Escrow (Emanet)</strong> mekanizmasını şart koşar. Bu modelde yazılımın güncel kaynak kodları ve derleme talimatları, tarafsız bir üçüncü kuruma (Escrow Agent veya noter/teknopark emanet kasası) teslim edilir; yalnızca sözleşmede yazılı "serbest bırakma şartları" (release conditions - örn. şirketin iflası) gerçekleştiğinde kaynak kod müşteriye açılır.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 4 -->
+            <section class="article-section-card" id="bolum-4">
+              <div class="section-header-row">
+                <div class="section-num-badge">04</div>
+                <h3>Açık Kaynak (Open Source) Lisansları ve Ticari Uyum Riskleri</h3>
+              </div>
+              <p class="article-prose">
+                Günümüzde kurumsal ve ticari yazılımların kod tabanlarının ortalama %70 ila %90’ı sıfırdan yazılmamakta; GitHub, npm, PyPI, Maven veya NuGet üzerinden projeye dahil edilen <strong>Açık Kaynak Kodlu Yazılım (Open Source Software - OSS)</strong> kütüphanelerinden oluşmaktadır. Sektördeki en tehlikeli yanılgı, <em>"Açık kaynaklı kodun sahipsiz (kamu malı) olduğu ve istenildiği gibi kapalı kaynaklı ticari ürünlerde kullanılabileceği"</em> düşüncesidir. Oysa açık kaynak lisansları, telif hakkına dayanan <strong>bağlayıcı hukuki sözleşmelerdir</strong>.
+              </p>
+
+              <div class="law-table-wrap">
+                <table class="law-table">
+                  <thead>
+                    <tr>
+                      <th>Lisans Türü ve Örnekler</th>
+                      <th>Hukuki Karakteri</th>
+                      <th>Ticari (Kapalı Kaynak) Yazılımlara Etkisi ve Yükümlülükler</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td><strong>İzin Verici (Permissive) Lisanslar</strong><br><em>MIT, BSD, Apache 2.0</em></td>
+                      <td>Esnek / Ticari Dostu</td>
+                      <td>Kodu değiştirerek kendi <strong>kapalı kaynaklı (proprietary) ticari ürününüze entegre edip satabilirsiniz</strong>. Yalnızca orijinal telif hakkı bildirimini ve lisans metnini koruma (attribution) yükümlülüğü vardır. (Apache 2.0 ayrıca açık bir patent lisansı ve patent misilleme klozu içerir.)</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Zayıf Copyleft Lisanslar</strong><br><em>LGPL (Lesser GPL), MPL 2.0</em></td>
+                      <td>Kütüphane / Dosya Bazlı Bulaşıcılık</td>
+                      <td>Açık kaynaklı kütüphaneyi dinamik bağlantı (dynamic linking - örn. <code>.dll</code> veya <code>.so</code> olarak) ile çağırıyorsanız kendi ana yazılımınızın kodunu açmanız gerekmez. Ancak kütüphanenin kendisinde yaptığınız değişiklikleri aynı lisansla açmak zorundasınızdır.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Güçlü Copyleft (Bulaşıcı) Lisanslar</strong><br><em>GPL v2, GPL v3</em></td>
+                      <td>Tam Bulaşıcı (Viral / Reciprocal)</td>
+                      <td><strong>Kritik Ticari Risk:</strong> GPL lisanslı bir kodu veya kütüphaneyi kendi kapalı kaynaklı ticari yazılımınıza entegre edip müşterilere dağıtırsanız, GPL’in "bulaşıcı" etkisi devreye girer ve <strong>kendi geliştirdiğiniz tüm ticari yazılımın kaynak kodunu da GPL lisansıyla halka açmak zorunda kalırsınız!</strong></td>
+                    </tr>
+                    <tr>
+                      <td><strong>Ağ Üzerinden Copyleft</strong><br><em>AGPL v3 (Affero GPL)</em></td>
+                      <td>Bulut / SaaS Bulaşıcılığı</td>
+                      <td>Standart GPL’de "yazılımı dağıtma" şartı varken (SaaS olarak sunucu üzerinden hizmet vermek dağıtım sayılmaz), <strong>AGPL v3</strong> bu boşluğu kapatmıştır. AGPL’li bir bileşeni değiştirip <strong>bulut (SaaS) üzerinden kullanıcılara açarsanız dahi tüm kaynak kodunuzu paylaşmak zorundasınızdır</strong>.</td>
+                    </tr>
+                    <tr>
+                      <td><strong>Kaynak Kodu Görüntülenebilir (Source-Available) Lisanslar</strong><br><em>BSL (Business Source License), SSPL</em></td>
+                      <td>Açık Kaynak Değildir (Kısıtlı Ticari)</td>
+                      <td>MongoDB, Redis, Elasticsearch ve HashiCorp gibi şirketlerin benimsediği bu lisanslar OSI onaylı "açık kaynak" değildir. Kod görüntülenebilir ancak bulut sağlayıcıların bunu yönetilen hizmet (Managed Service) olarak satmasını veya üretimde ücretsiz kullanmasını yasaklar.</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+
+              <h4 class="article-subheading">Yazılım Malzeme Listesi (SBOM) ve Yatırım (Due Diligence) Denetimleri</h4>
+              <p class="article-prose article-prose-no-bottom">
+                Bir teknoloji girişiminin (Startup) yatırım alması veya satın alınması (M&amp;A) süreçlerinde yapılan <strong>Teknik ve Hukuki Due Diligence (Durum Tespiti)</strong> incelemelerinde, şirketin kod deposu otomatik <em>Yazılım Kompozisyon Analizi (SCA - Black Duck, Snyk, FOSSA vb.)</em> araçlarıyla taranır. Eğer şirketin amiral gemisi olan kapalı kaynaklı yazılımın içinde yanlışlıkla kullanılmış bir <strong>GPL veya AGPL</strong> kütüphanesi tespit edilirse, şirketin fikri mülkiyet değeri sıfırlanabilmekte ve yatırım anlaşmaları iptal edilmektedir. Bu nedenle her yazılım projesinde güncel bir <strong>SBOM (Software Bill of Materials - Yazılım Malzeme Listesi)</strong> tutulması zorunludur.
+              </p>
+            </section>
+
+            <!-- BÖLÜM 5 -->
+            <section class="article-section-card" id="bolum-5">
+              <div class="section-header-row">
+                <div class="section-num-badge">05</div>
+                <h3>Tersine Mühendislik (Decompilation), API Telifleri ve Yedekleme</h3>
+              </div>
+              <p class="article-prose">
+                Kural olarak, lisanslı bir yazılımın derlenmiş nesne kodunun (binary/bytecode) tersine mühendislik (reverse engineering) araçlarıyla (IDA Pro, Ghidra, ILSpy vb.) kaynak koda dönüştürülmesi (decompilation/disassembly) ve değiştirilmesi eser sahibinin işleme ve çoğaltma haklarının ihlalidir. Ancak kanun koyucu, yazılımların tekelci kilitlenmesini önlemek ve <strong>birlikte çalışabilirliği (interoperability)</strong> sağlamak amacıyla <strong>FSEK m. 38</strong>’de emredici istisnalar öngörmüştür.
+              </p>
+
+              <h4 class="article-subheading">FSEK m. 38 Kapsamında Yasal Kullanıcının Emredici Hakları</h4>
+              <ul class="article-topic-list">
+                <li><strong>1. Hata Düzeltme ve Olağan Kullanım (m. 38/3):</strong> Bilgisayar programını yasal yollardan edinen kişinin programı yüklemesi, çalıştırması ve <strong>hatalarını düzeltmesi (debugging/patching)</strong> sözleşmeyle dahi yasaklanamaz.</li>
+                <li><strong>2. Yedekleme Hakkı (m. 38/4):</strong> Bilgisayar programının kullanımı için gerekli olduğu sürece, programı kullanma hakkına sahip kişinin bir adet <strong>yedekleme kopyası (backup copy)</strong> oluşturması hiçbir sözleşme hükmüyle engellenemez.</li>
+                <li><strong>3. Gözlemleme ve Sınama Hakkı (Black-Box Testing - m. 38/5):</strong> Programı kullanma hakkına sahip kişi, programın yüklenmesi, görüntülenmesi, çalıştırılması, iletilmesi veya depolanması fiillerini yaparken, programın herhangi bir öğesinin altında yatan <strong>fikir ve ilkeleri belirlemek amacıyla</strong> programın işleyişini gözlemleyebilir, tetkik edebilir ve sınayabilir.</li>
+                <li>
+                  <strong>4. Ara İşlerlik (Interoperability) Amacıyla Tersine Mühendislik / Decompilation (m. 38/6-7):</strong> Bağımsız olarak yaratılmış bir bilgisayar programının diğer programlarla <strong>ara işlerliğini (birlikte çalışabilirliğini / API entegrasyonunu)</strong> gerçekleştirmek üzere gerekli bilgileri elde etmek başka türlü mümkün değilse; kodun çoğaltılması ve kod formunun tercümesi (decompilation) aşağıdaki üç şartın birlikte gerçekleşmesi halinde <strong>hukuka uygundur</strong>:
+                  <ul class="nested-sublist">
+                    <li>Bu fiillerin ruhsat (lisans) sahibi veya programı kullanma hakkına sahip başka bir kişi tarafından gerçekleştirilmesi,</li>
+                    <li>Ara işlerliği gerçekleştirmek için gerekli bilgilerin bu kişilerin kullanımına daha önceden sunulmamış olması,</li>
+                    <li>Bu fiillerin, programın yalnızca ara işlerliği gerçekleştirmek için gerekli olan kısımlarıyla sınırlı kalması.</li>
+                  </ul>
+                  <em>(Elde edilen bu bilgiler; ara işlerlik dışında başka bir amaçla kullanılamaz, başkalarına verilemez ve ifade bakımından <strong>"önemli ölçüde benzer"</strong> yeni bir rakip bilgisayar programının geliştirilmesi veya pazarlanması için kesinlikle kullanılamaz!)</em>
+                </li>
+              </ul>
+
+              <h4 class="article-subheading">API Arayüzlerinin Telif Statüsü (Google v. Oracle Perspektifi)</h4>
+              <p class="article-prose article-prose-no-bottom">
+                Uygulama Programlama Arayüzleri (<strong>API</strong>), farklı yazılımların birbirleriyle konuşmasını sağlayan bildirim kodları (declaring code - metot isimleri, parametre yapıları) ve bunları çalıştıran uygulama kodlarından (implementing code) oluşur. Hem ABD Yüksek Mahkemesi’nin tarihi <em>Google LLC v. Oracle America, Inc.</em> (Java API) kararında hem de Avrupa Birliği Adalet Divanı’nın <em>SAS Institute</em> kararında; yazılımların birlikte çalışabilirliğini sağlayan API bildirim yapılarının, veri formatlarının ve komut setlerinin tekel altına alınmasının inovasyonu boğacağı vurgulanarak, API arayüzlerinin altında yatan işlevsel yapıların telif korumasının dışında kaldığı (veya adil kullanım / birlikte çalışabilirlik istisnası kapsamında olduğu) kabul edilmiştir.
+              </p>
+            </section>
+
+            <!-- BÖLÜM 6 -->
+            <section class="article-section-card" id="bolum-6">
+              <div class="section-header-row">
+                <div class="section-num-badge">06</div>
+                <h3>Yazılımda Ayıplı İfa (Bug/Güvenlik Açığı) ve Sorumsuzluk Kayıtları</h3>
+              </div>
+              <p class="article-prose">
+                Bilgisayar bilimlerinin temel gerçeği, karmaşık hiçbir yazılımın "%100 hatasız (bug-free)" olamayacağıdır. Ancak bir yazılımdaki kodlama hatası (bug), bellek sızıntısı (memory leak), yanlış finansal hesaplama veya SQL Injection / XSS gibi bir siber güvenlik zafiyeti müşteriyi milyonlarca liralık zarara uğrattığında, Türk Borçlar Kanunu’ndaki <strong>"Ayıba Karşı Tekeffül (Sorumluluk)" (TBK m. 474-478)</strong> hükümleri devreye girer.
+              </p>
+
+              <h4 class="article-subheading">Açık Ayıp, Gizli Ayıp ve Muayene/İhbar Yükümlülüğü</h4>
+              <ul class="article-topic-list">
+                <li><strong>Teslim, Test (UAT) ve Açık Ayıplar:</strong> Yazılım teslim edildiğinde işsahibi (müşteri), işlerin olağan akışına göre imkan bulur bulmaz yazılımı gözden geçirmek (<strong>UAT - Kullanıcı Kabul Testlerini</strong> yapmak) ve tespit ettiği açık ayıpları yükleniciye bildirmek zorundadır. Aksi takdirde yazılımı mevcut haliyle örtülü olarak kabul etmiş sayılır.</li>
+                <li><strong>Gizli Ayıplar (Latent Defects):</strong> Test aşamasında ortaya çıkmayan, ancak yazılım canlıya (production) alındıktan sonra yüksek trafik altında veya belirli bir veri kombinasyonunda patlak veren mimari hatalar ve güvenlik açıkları <strong>"gizli ayıp"</strong> niteliğindedir. Müşteri, gizli ayıbı öğrendiği anda <strong>hemen (derhal)</strong> yazılımcıya bildirmek zorundadır.</li>
+                <li><strong>Müşterinin Seçimlik Hakları (TBK m. 475):</strong> Yazılımdaki ayıp nedeniyle eser kullanılamayacak derecede kusurluysa müşteri sözleşmeden dönebilir (bedel iadesi); ayıp daha hafifse bedelden indirim (tenzil) isteyebilir veya aşırı bir masraf gerektirmiyorsa <strong>ücretsiz onarım (yama/patch geliştirilmesi)</strong> talep edebilir.</li>
+              </ul>
+
+              <h4 class="article-subheading">"Olduğu Gibi" (AS-IS) Klozları ve Sorumluluk Sınırlandırma (TBK m. 115)</h4>
+              <p class="article-prose article-prose-no-bottom">
+                Neredeyse tüm küresel yazılım lisanslarında ve SaaS sözleşmelerinde; <em>"Yazılım 'OLDUĞU GİBİ' (AS-IS) sunulmaktadır, dolaylı zararlardan ve kâr kaybından sorumluluk kabul edilmez, toplam tazminat sorumluluğu son 12 ayda ödenen lisans bedeliyle sınırlıdır"</em> şeklinde <strong>Sorumsuzluk / Sorumluluk Sınırlandırma Kayıtları (Limitation of Liability)</strong> yer alır. Ancak <strong>Türk Borçlar Kanunu m. 115/1</strong> emredici hükmü uyarınca; borçlunun <strong>ağır kusuru (kastı veya ağır ihmali)</strong> halinde sorumlu olmayacağına ilişkin önceden yapılan anlaşmalar <strong>kesin olarak hükümsüzdür!</strong> Dolayısıyla bir yazılım firması, sektörel temel güvenlik standartlarını (örneğin OWASP Top 10 önlemlerini veya temel şifrelemeyi) ağır ihmalle göz ardı etmişse, sözleşmedeki "sorumsuzluk maddesine" sığınamaz.
+              </p>
+            </section>
+
+            <!-- BÖLÜM 7 -->
+            <section class="article-section-card" id="bolum-7">
+              <div class="section-header-row">
+                <div class="section-num-badge">07</div>
+                <h3>Güvenli Yazılım Geliştirme Yaşam Döngüsü (SDLC) ve Hukuki Uyum</h3>
+              </div>
+              <p class="article-prose">
+                Modern yazılım projelerinde hukuki uyum, kod yazılıp bittikten sonra sözleşme imzalamaktan ibaret değildir; gereksinim analizinden mimari tasarıma, kodlamadan (CI/CD) canlı ortama geçişe kadar tüm <strong>Yazılım Geliştirme Yaşam Döngüsü (SDLC)</strong> içerisine entegre edilmelidir:
+              </p>
+
+              <ul class="article-topic-list">
+                <li><strong>1. Tasarımdan İtibaren Mahremiyet (Privacy by Design - KVKK Uyumu):</strong> Veritabanı tabloları ve API uç noktaları (endpoints) tasarlanırken; gereksiz kişisel veri sütunları açılmamalı (veri minimizasyonu), parolalar düz metin yerine tuzlanmış kriptografik özetlerle (Argon2, bcrypt) saklanmalı, silme/anonimleştirme fonksiyonları ve rol tabanlı erişim logları en baştan koda gömülmelidir.</li>
+                <li><strong>2. Güvenli Kodlama (DevSecOps) ve SAST/DAST Kontrolleri:</strong> CI/CD boru hatlarına (pipeline) statik ve dinamik kod analiz araçları (<strong>SAST/DAST</strong>) ile açık kaynak lisans/zafiyet tarayıcıları (<strong>SCA</strong>) entegre edilerek, hem güvenlik açıkları hem de yasaklı (GPL/AGPL) lisans bağımlılıkları daha kod birleştirilmeden (Pull Request aşamasında) yakalanmalıdır.</li>
+                <li><strong>3. Yapay Zeka Destekli Kodlama (AI Pair Programming) Politikası:</strong> Geliştiricilerin GitHub Copilot, Cursor veya ChatGPT gibi araçlarla kod yazarken şirketin özel algoritmalarını ve müşteri verilerini dış modellere sızdırmasını önleyen <em>Kurumsal AI Kodlama Politikaları</em> oluşturulmalı; ayrıca yapay zekanın ürettiği kod parçalarının açık kaynak lisans ihlali içerip içermediği denetlenmelidir.</li>
+                <li><strong>4. Eksiksiz Sözleşme ve Teslim Zinciri:</strong> Çalışanlar ve alt yüklenicilerle FSEK m. 52’ye tam uyumlu <strong>Mali Hak Devir Sözleşmeleri</strong> yapılmalı, proje kapsamı teknik şartname (SRS) ve kabul kriterleriyle (UAT) somutlaştırılmalı, her sürüm teslimatı zaman damgalı/imzalı tutanaklarla kayıt altına alınmalıdır.</li>
+              </ul>
+
+              <p class="article-prose article-prose-summary">
+                Sonuç olarak <strong>Yazılım Geliştirme Hukuku</strong>; bir yazılım mühendisinin yazdığı her kod satırını ekonomik bir varlığa (fikri mülkiyete) dönüştüren, şirketleri yıkıcı telif ve tazminat davalarından koruyan ve teknoloji ekosisteminde güvenilir ticaretin kurallarını belirleyen temel mühendislik ve hukuk disiplinidir.
+              </p>
+            </section>
+
+            <!-- Diğer Makaleler -->
+            <div class="other-articles-box">
+              <div class="other-articles-header">
+                <h5>Diğer Makalelerim</h5>
+                <span class="other-articles-count">10 Makale</span>
+              </div>
+              <div class="other-articles-grid">
+                <a class="other-article-link" href="bilisim_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Hukuk &amp; Bilişim</span>
+                      <span class="other-article-num">01</span>
+                    </div>
+                    <h6>Bilişim Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="kvkk.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">KVKK &amp; Güvenlik</span>
+                      <span class="other-article-num">02</span>
+                    </div>
+                    <h6>Kişisel Verileri Koruma Kanunu</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="btk.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Regülasyon</span>
+                      <span class="other-article-num">03</span>
+                    </div>
+                    <h6>Bilgi Teknolojileri ve İletişim Kurumu</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="verilerin_islenmesi.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Veri Yönetimi</span>
+                      <span class="other-article-num">04</span>
+                    </div>
+                    <h6>Verilerin İşlenmesi</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="yapay_zeka_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yapay Zeka &amp; Regülasyon</span>
+                      <span class="other-article-num">05</span>
+                    </div>
+                    <h6>Yapay Zeka Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="siber_guvenlik_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Siber Güvenlik &amp; Hukuk</span>
+                      <span class="other-article-num">06</span>
+                    </div>
+                    <h6>Siber Güvenlik Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link active" href="yazilim_gelistirme_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yazılım &amp; Fikri Mülkiyet</span>
+                      <span class="other-article-num">07</span>
+                    </div>
+                    <h6>Yazılım Geliştirme Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Şu An Okuyorsunuz</span>
+                    <span class="fa fa-check-circle"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="git_ve_github.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yazılım Mühendisliği &amp; DevOps</span>
+                      <span class="other-article-num">08</span>
+                    </div>
+                    <h6>Git ve GitHub</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="veri_ambari_ve_veri_madenciligi.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Veri Bilimi &amp; İş Zekası</span>
+                      <span class="other-article-num">09</span>
+                    </div>
+                    <h6>Veri Ambarı ve Veri Madenciliği</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="surec_otomasyonu_ve_verimlilik.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Dijital Dönüşüm &amp; Mühendislik</span>
+                      <span class="other-article-num">10</span>
+                    </div>
+                    <h6>Süreç Otomasyonu ve Verimlilik</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer class="section section-fluid footer-minimal context-dark">
+      <div class="bg-gray-15">
+        <div class="container-fluid">
+          <div class="footer-minimal-bottom-panel text-sm-left">
+            <div class="row row-10 align-items-md-center">
+              <div class="col-sm-6 col-md-4 text-sm-right text-md-center">
+                <ul class="list-inline list-inline-sm footer-social-list-2">
+                  <li><a class="icon fa fa-linkedin" href="https://www.linkedin.com/in/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"></a></li>
+                  <li><a class="icon fa fa-twitter" href="https://x.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"></a></li>
+                  <li><a class="icon fa fa-youtube" href="https://www.youtube.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="YouTube"></a></li>
+                  <li><a class="icon fa fa-instagram" href="https://www.instagram.com/serhat.nehir" target="_blank" rel="noopener noreferrer" aria-label="Instagram"></a></li>
+                  <li><a class="icon fa fa-facebook" href="https://www.facebook.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="Facebook"></a></li>
+                  <li><a class="icon fa fa-telegram" href="https://t.me/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-md-4 order-sm-first">
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year">2026</span> <span>Serhat Nehir</span></p>
+              </div>
+              <div class="col-sm-6 col-md-4 text-md-right">
+                <span>Tüm hakları Saklıdır.</span> <span>Tasarım Serhat Nehir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

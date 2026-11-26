@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html class="wide" lang="tr">
+  <head>
+    <title>Verilerin İşlenmesi | Serhat Nehir</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="../images/favicon.ico" type="image/x-icon">
+    <link rel="canonical" href="https://www.serhatnehir.com.tr/makalelerim/verilerin_islenmesi.html">
+    <meta name="description" content="Verilerin toplanması, kaydedilmesi, saklanması, log kayıtlarının hukuki niteliği ve modern veri işleme ilkeleri - Serhat Nehir" />
+    <!-- Open Graph / Sosyal Medya Paylaşım Etiketleri -->
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Serhat Nehir">
+    <meta property="og:title" content="Verilerin İşlenmesi | Serhat Nehir">
+    <meta property="og:description" content="Verilerin toplanması, kaydedilmesi, saklanması, log kayıtlarının hukuki niteliği ve modern veri işleme ilkeleri.">
+    <meta property="og:url" content="https://www.serhatnehir.com.tr/makalelerim/verilerin_islenmesi.html">
+    <meta property="og:image" content="https://www.serhatnehir.com.tr/images/makaleler/verilerin_islenmesi.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Verilerin İşlenmesi | Serhat Nehir">
+    <meta name="twitter:description" content="Verilerin toplanması, kaydedilmesi, saklanması, log kayıtlarının hukuki niteliği ve modern veri işleme ilkeleri.">
+    <meta name="twitter:image" content="https://www.serhatnehir.com.tr/images/makaleler/verilerin_islenmesi.jpg">
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/bootstrap.css">
+    <link rel="stylesheet" href="../css/fonts.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <!-- Yapısal Veri (Schema.org JSON-LD) -->
+    <script type="application/ld+json">
+{
+      "@context": "https://schema.org",
+      "@type": "Article",
+      "headline": "Verilerin İşlenmesi | Serhat Nehir",
+      "description": "Verilerin toplanması, kaydedilmesi, saklanması, log kayıtlarının hukuki niteliği ve modern veri işleme ilkeleri.",
+      "image": "https://www.serhatnehir.com.tr/images/makaleler/verilerin_islenmesi.jpg",
+      "author": {
+            "@type": "Person",
+            "name": "Serhat Nehir",
+            "url": "https://www.serhatnehir.com.tr/"
+      },
+      "publisher": {
+            "@type": "Person",
+            "name": "Serhat Nehir"
+      },
+      "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://www.serhatnehir.com.tr/makalelerim/verilerin_islenmesi.html"
+      },
+      "datePublished": "2026-11-04",
+      "dateModified": "2026-11-04",
+      "inLanguage": "tr-TR"
+}
+    </script>
+  </head>
+
+  <body class="article-page">
+    <div id="scroll-progress"></div>
+
+    <!-- Üst Bar -->
+    <header class="article-topbar">
+      <div class="container article-topbar-inner">
+        <a href="../index.html" aria-label="Serhat Nehir Ana Sayfa"><img src="../images/logo_siyah.png" alt="Serhat Nehir Logo" width="180" height="40"/></a>
+        <a class="back-home-btn" href="../index.html#makalelerim" aria-label="Makalelere Dön"><span class="fa fa-angle-left"></span> Makalelere Dön</a>
+      </div>
+    </header>
+
+    <!-- Başlık (Hero) Alanı -->
+    <section class="article-hero">
+      <div class="container">
+        <span class="article-category-pill">Veri Yönetimi</span>
+        <h1>Verilerin İşlenmesi</h1>
+        <p class="text-width-large">Verilerin toplanması, kaydedilmesi, saklanması, log kayıtlarının hukuki niteliği ve modern veri işleme ilkeleri.</p>
+        <div class="article-author-bar">
+          <img class="article-author-avatar" src="../images/sn.jpg" alt="Serhat Nehir" width="48" height="48" loading="lazy" />
+          <div class="article-author-info">
+            <h6>Serhat Nehir</h6>
+            <span>Yazılım Geliştirici &amp; Yazar</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Ana İçerik -->
+    <main class="article-main-wrap">
+      <div class="container">
+        <div class="row">
+          <!-- Sol Menü: İçindekiler -->
+          <div class="col-lg-4">
+            <aside class="toc-card">
+              <div class="toc-title">İçindekiler</div>
+              <ul class="toc-list">
+                <li><a href="#bolum-1">1. Dijital Ekosistemde Veri Yaşam Döngüsü ve Veri İşleme Kavramı</a></li>
+                <li><a href="#bolum-2">2. Verilerin Toplanması ve Kaydedilmesi: Yöntemler ve Sınırlar</a></li>
+                <li><a href="#bolum-3">3. Saklama, Muhafaza ve Periyodik İmha Mimarisi</a></li>
+                <li><a href="#bolum-4">4. Log Kayıtlarının (Trafik Verileri) Hukuki Niteliği ve İspat Değeri</a></li>
+                <li><a href="#bolum-5">5. Modern Veri İşleme İlkeleri: Privacy by Design ve Minimizasyon</a></li>
+                <li><a href="#bolum-6">6. Otomatik Karar Alma, Profilleme ve Algoritmik Sorumluluk</a></li>
+                <li><a href="#bolum-7">7. Veri İşleme Faaliyetlerinde Hukuki Riskler ve Denetim Mekanizmaları</a></li>
+              </ul>
+            </aside>
+          </div>
+
+          <!-- Sağ Sütun: Makale Bölümleri -->
+          <div class="col-lg-8">
+
+            <!-- BÖLÜM 1 -->
+            <section class="article-section-card" id="bolum-1">
+              <div class="section-header-row">
+                <div class="section-num-badge">01</div>
+                <h3>Dijital Ekosistemde Veri Yaşam Döngüsü ve Veri İşleme Kavramı</h3>
+              </div>
+              <p class="article-prose">
+                Bilişim sistemlerinin ve internet altyapılarının evrimi, ham bilginin toplanmasından işlenmesine, depolanmasından imha edilmesine kadar uzanan süreçleri hukuki ve teknik bir disiplin olan <strong>veri yönetimi</strong> merkezine taşımıştır. Hukuki açıdan <strong>veri işleme (data processing)</strong>, yalnızca bir bilgisayar programının veriler üzerinde matematiksel hesap yapması değil; 6698 sayılı KVKK m. 3 uyarınca verinin elde edilmesi, kaydedilmesi, depolanması, muhafaza edilmesi, değiştirilmesi, yeniden düzenlenmesi, açıklanması, aktarılması, devralınması veya sınıflandırılması gibi veriler üzerinde gerçekleştirilen her türlü teknik ve idari müdahaledir.
+              </p>
+              <p class="article-prose">
+                Bir organizasyonun veriyi ele geçirdiği ilk andan sunuculardan kalıcı olarak silindiği ana kadar izlediği yol haritası <strong>Veri Yaşam Döngüsü (Data Lifecycle Management - DLM)</strong> olarak adlandırılır. Bu döngünün her aşaması, hem 6698 sayılı KVKK hem de 5651 sayılı İnternet Kanunu ve ilgili ikincil düzenlemeler nezdinde sıkı normatif sınırlamalara ve yükümlülüklere tabidir.
+              </p>
+            </section>
+
+            <!-- BÖLÜM 2 -->
+            <section class="article-section-card" id="bolum-2">
+              <div class="section-header-row">
+                <div class="section-num-badge">02</div>
+                <h3>Verilerin Toplanması ve Kaydedilmesi: Yöntemler ve Sınırlar</h3>
+              </div>
+              <p class="article-prose">
+                Veri işleme zincirinin ilk halkası olan <strong>toplama (collection)</strong> ve <strong>kaydetme (recording)</strong> aşamaları, bireylerin haklarına ilk müdahalenin gerçekleştiği kritik eşiktir. Veriler doğrudan ilgili kişinin beyanıyla (web formları, sözleşmeler, üyelik kayıtları) veya dolaylı yollardan (pasif çerezler, IP takibi, cihaz parmak izi, log yazılımları, IoT sensörleri, kurumsal kameralar) elde edilebilir.
+              </p>
+
+              <h4 class="article-subheading">Toplama ve Kaydetme Süreçlerinde Hukuki Sınırlar</h4>
+              <ul class="article-topic-list">
+                <li><strong>Şeffaflık ve Aydınlatma İlkesi:</strong> Verinin hangi yolla (aktif/pasif) toplandığına bakılmaksızın, veri toplanma anında ilgili kişiye KVKK m. 10 kapsamında aydınlatma yapılması zorunludur. Gizli veri toplama yöntemleri (örn. kullanıcı bilgisi dışında tarayıcı geçmişini okuyan scriptler) hukuka aykırıdır.</li>
+                <li><strong>Veri Kalitesi ve Doğruluk:</strong> Kaydedilen verilerin sisteme hatalı veya eksik girilmesi, ileride alınacak idari veya hukuki kararları (örn. finansal skorlama veya işe alım algoritmaları) doğrudan etkileyeceğinden, veri sorumlusu verinin doğruluğunu teyit mekanizmalarıyla (örn. SMS/E-posta doğrulama) desteklemek zorundadır.</li>
+                <li><strong>Kayıt Sistemlerinin Yapılandırılması:</strong> KVKK, verilerin herhangi bir veri kayıt sisteminin parçası olmasını veri işlemenin ön şartı saymıştır. Dağınık, unutturulmuş veya izlenemeyen Excel dosyalarında kontrolsüz veri saklanması veri güvenliği ihlali doğurur.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 3 -->
+            <section class="article-section-card" id="bolum-3">
+              <div class="section-header-row">
+                <div class="section-num-badge">03</div>
+                <h3>Saklama, Muhafaza ve Periyodik İmha Mimarisi</h3>
+              </div>
+              <p class="article-prose">
+                Verilerin süresiz olarak saklanması, hem KVKK m. 4'teki "gerekli olan süre kadar muhafaza edilme" ilkesine hem de GDPR'daki "depolama sınırlaması" (storage limitation) kuralına açıkça aykırıdır. Saklama (storage) faaliyeti, verinin işlenme amacının gerektirdiği süre ile sınırlıdır.
+              </p>
+
+              <h4 class="article-subheading">Saklama ve İmha Sürecinin Evreleri</h4>
+              <ul class="article-topic-list">
+                <li><strong>Yasal Saklama Süreleri:</strong> Türk Ticaret Kanunu (m. 82) ve Vergi Usul Kanunu (m. 253) uyarınca ticari defterler, faturalar ve finansal belgeler <strong>10 yıl</strong>; 5651 sayılı Kanun uyarınca internet trafik logları <strong>1 ila 2 yıl</strong>; İş Kanunu uyarınca özlük dosyaları iş akdinin sona ermesinden itibaren <strong>10 yıl</strong> süreyle saklanmak zorundadır. Bu yasal süreler sona ermeden verilerin silinmesi talep edilemez.</li>
+                <li><strong>Saklama ve İmha Politikası:</strong> VERBİS’e kayıt yükümlülüğü bulunan veri sorumluları, kişisel verilerin hangi kriterlere göre saklandığını ve hangi periyotlarla imha edileceğini gösteren yazılı bir politika oluşturmak zorundadır.</li>
+                <li><strong>Periyodik İmha ve Kontroller:</strong> Politikada belirlenen süreler (örneğin 6 aylık periyotlar) çerçevesinde, saklama süresi dolan veriler resen silinir, yok edilir veya anonim hale getirilir.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 4 -->
+            <section class="article-section-card" id="bolum-4">
+              <div class="section-header-row">
+                <div class="section-num-badge">04</div>
+                <h3>Log Kayıtlarının (Trafik Verileri) Hukuki Niteliği ve İspat Değeri</h3>
+              </div>
+              <p class="article-prose">
+                Bilişim sistemlerinde kullanıcıların gerçekleştirdiği her türlü eylemin (web sitesi ziyareti, e-posta gönderimi, sisteme giriş/çıkış, IP adresleri ve port eşleşmeleri) zaman damgasıyla kaydedildiği verilere <strong>log kayıtları (trafik verileri / audit logs)</strong> denir. Log kayıtları, hem siber güvenlik operasyonları hem de adli bilişim incelemeleri açısından hayati önem taşır.
+              </p>
+
+              <h4 class="article-subheading">Log Kayıtlarının Hukuki ve Teknik Boyutu</h4>
+              <ul class="article-topic-list">
+                <li><strong>5651 Sayılı Kanun ve İSS Logları:</strong> Erişim sağlayıcılar ve yer sağlayıcılar, abonelerine ait trafik bilgilerini 1 yıl süreyle bütünlüğü bozulmayacak şekilde saklamak zorundadır. Bu loglar, işlenen bilişim suçlarının failine ulaşmada (örn. IP çakışmalarının ve CGNAT loglarının çözümünde) temel delil niteliğindedir.</li>
+                <li><strong>Zaman Damgası ve Bütünlük (Integrity):</strong> Log kayıtlarının sonradan değiştirilememesi, silinememesi veya manipüle edilememesi için kriptografik özet fonksiyonları (Hash) ve güvenli zaman damgası (Timestamp) ile mühürlenmesi gerekir. Bütünlüğü bozulmuş veya log dosyalarında manipülasyon tespit edilmiş sistemlerden elde edilen kayıtlar, CMK m. 217 kapsamında <strong>hukuka aykırı delil</strong> olarak değerlendirilebilir.</li>
+                <li><strong>KVKK ve Loglama Dengesi:</strong> Log kayıtları kullanıcıların IP adreslerini, erişim saatlerini ve internet hareketlerini içerdiği için KVKK anlamında kişisel veridir. Bu verilerin işlenmesi ve saklanması, kural olarak veri sorumlusunun meşru menfaati (siber güvenliğin sağlanması) veya hukuki yükümlülüğü (5651 sayılı Kanun) kapsamındadır. Ancak log verilerinin amaç dışı (örneğin çalışanların mesai içi sohbetlerinin izlenmesi veya performans takibi) kullanılması ağır KVKK ihlallerine yol açar.</li>
+              </ul>
+            </section>
+
+            <!-- BÖLÜM 5 -->
+            <section class="article-section-card" id="bolum-5">
+              <div class="section-header-row">
+                <div class="section-num-badge">05</div>
+                <h3>Modern Veri İşleme İlkeleri: Privacy by Design ve Minimizasyon</h3>
+              </div>
+              <p class="article-prose">
+                Geleneksel hukuk yaklaşımı yasaları sonradan ihlal edenleri cezalandırırken, modern veri koruma hukuku (özellikle GDPR ve güncellenen KVKK pratikleri) sorunu kökten çözmeyi hedefler. Bu felsefenin en önemli iki aracı <strong>Tasarımdan İtibaren Mahremiyet (Privacy by Design - PbD)</strong> ve <strong>Varsayılan Olarak Mahremiyet (Privacy by Default)</strong> ilkeleridir.
+              </p>
+              <div class="law-subgrid">
+                <div class="law-box">
+                  <span class="law-box-tag">Tasarımdan İtibaren Mahremiyet</span>
+                  <p>Yazılım mimarisi, veritabanı şemaları ve dijital ürünler geliştirilirken (kodlama aşamasında) mahremiyetin ve veri güvenliğinin en baştan entegre edilmesidir.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">Varsayılan Olarak Mahremiyet</span>
+                  <p>Sisteme üye olan veya ürün kullanan bir kişinin ek bir ayar yapmasına gerek kalmaksızın, en az veri toplama (minimizasyon) ayarlarının varsayılan olarak aktif gelmesidir.</p>
+                </div>
+                <div class="law-box">
+                  <span class="law-box-tag">Veri Minimizasyonu</span>
+                  <p>Yalnızca belirlenen amaç için mutlak gerekli olan verilerin işlenmesi; aşırı, gereksiz ve spekülatif veri toplama faaliyetlerinin kesin olarak reddedilmesidir.</p>
+                </div>
+              </div>
+            </section>
+
+            <!-- BÖLÜM 6 -->
+            <section class="article-section-card" id="bolum-6">
+              <div class="section-header-row">
+                <div class="section-num-badge">06</div>
+                <h3>Otomatik Karar Alma, Profilleme ve Algoritmik Sorumluluk</h3>
+              </div>
+              <p class="article-prose">
+                Yapay zeka, makine öğrenmesi ve büyük veri analitiği; kişisel verilerin otomatik sistemler aracılığıyla işlenerek bireylerin ekonomik durumları, kredi skorları, işe alım süreçleri veya sigorta primleri hakkında <strong>otomatik kararlar</strong> alınmasını (profiling) yaygınlaştırmıştır.
+              </p>
+              <p class="article-prose">
+                KVKK m. 11/1-(g) bendi uyarınca ilgili kişilerin, işlenen verilerin münhasıran otomatik sistemler vasıtasıyla analiz edilmesi suretiyle kişinin kendisi aleyhine bir sonucun ortaya çıkmasına itiraz etme hakkı bulunmaktadır. Algoritmik kararların şeffaf olmaması (Kara Kutu / Black Box problemi), önyargılı verilerle eğitilen modellerin (Algorithmic Bias) ayrımcılık üretmesi, veri işleme hukukunda yeni sorumluluk rejimlerinin (Algoritmik Denetim ve Etki Değerlendirmesi) doğmasına neden olmuştur.
+              </p>
+            </section>
+
+            <!-- BÖLÜM 7 -->
+            <section class="article-section-card" id="bolum-7">
+              <div class="section-header-row">
+                <div class="section-num-badge">07</div>
+                <h3>Veri İşleme Faaliyetlerinde Hukuki Riskler ve Denetim Mekanizmaları</h3>
+              </div>
+              <p class="article-prose">
+                Hukuka aykırı veri işleme faaliyetleri; şirketler için yüksek tutarlı idari para cezaları, ticari itibar kaybı, müşteri güvensizliği ve yöneticiler ile çalışanlar açısından Türk Ceza Kanunu kapsamındaki hapis cezaları (TCK m. 135-138) gibi yıkıcı riskler barındırır.
+              </p>
+              <ul class="article-topic-list">
+                <li><strong>Kurumsal Denetim ve İç Uyum:</strong> Şirketlerin bünyesinde Veri Koruma Görevlisi (DPO) veya uyum ekipleri bulundurması, periyodik iç denetimler yapması ve dış bilişim denetim firmalarıyla çalışarak sistem açıklarını kapatması hayati önem taşır.</li>
+                <li><strong>KVK Kurulu İncelemeleri:</strong> Kurul, ihbar veya şikayet üzerine ya da resen veri işleme süreçlerini denetleyebilir; hukuka aykırılık tespit ettiğinde veri işleme faaliyetinin durdurulmasını, verilerin imha edilmesini ve idari para cezası uygulanmasını kararlaştırabilir.</li>
+              </ul>
+              <p class="article-prose article-prose-summary">
+                Sonuç olarak <strong>verilerin işlenmesi</strong>, ham verinin ekonomik değere dönüştürüldüğü bir optimizasyon süreci olduğu kadar, bireylerin temel hak ve özgürlüklerinin anayasal güvence altında korunduğu sıkı kurallara bağlı hukuki bir zemindir. Yazılım geliştiricilerden sistem yöneticilerine ve hukukçulara kadar tüm paydaşların bu süreci "tasarımdan itibaren uyum" bilinciyle yönetmesi zorunludur.
+              </p>
+            </section>
+
+            <!-- Diğer Makaleler -->
+            <div class="other-articles-box">
+              <div class="other-articles-header">
+                <h5>Diğer Makalelerim</h5>
+                <span class="other-articles-count">10 Makale</span>
+              </div>
+              <div class="other-articles-grid">
+                <a class="other-article-link" href="bilisim_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Hukuk &amp; Bilişim</span>
+                      <span class="other-article-num">01</span>
+                    </div>
+                    <h6>Bilişim Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="kvkk.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">KVKK &amp; Güvenlik</span>
+                      <span class="other-article-num">02</span>
+                    </div>
+                    <h6>Kişisel Verileri Koruma Kanunu</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="btk.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Regülasyon</span>
+                      <span class="other-article-num">03</span>
+                    </div>
+                    <h6>Bilgi Teknolojileri ve İletişim Kurumu</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link active" href="verilerin_islenmesi.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Veri Yönetimi</span>
+                      <span class="other-article-num">04</span>
+                    </div>
+                    <h6>Verilerin İşlenmesi</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Şu An Okuyorsunuz</span>
+                    <span class="fa fa-check-circle"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="yapay_zeka_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yapay Zeka &amp; Regülasyon</span>
+                      <span class="other-article-num">05</span>
+                    </div>
+                    <h6>Yapay Zeka Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="siber_guvenlik_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Siber Güvenlik &amp; Hukuk</span>
+                      <span class="other-article-num">06</span>
+                    </div>
+                    <h6>Siber Güvenlik Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="yazilim_gelistirme_hukuku.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yazılım &amp; Fikri Mülkiyet</span>
+                      <span class="other-article-num">07</span>
+                    </div>
+                    <h6>Yazılım Geliştirme Hukuku</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="git_ve_github.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Yazılım Mühendisliği &amp; DevOps</span>
+                      <span class="other-article-num">08</span>
+                    </div>
+                    <h6>Git ve GitHub</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="veri_ambari_ve_veri_madenciligi.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Veri Bilimi &amp; İş Zekası</span>
+                      <span class="other-article-num">09</span>
+                    </div>
+                    <h6>Veri Ambarı ve Veri Madenciliği</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+                <a class="other-article-link" href="surec_otomasyonu_ve_verimlilik.html">
+                  <div>
+                    <div class="other-article-top">
+                      <span class="other-article-cat">Dijital Dönüşüm &amp; Mühendislik</span>
+                      <span class="other-article-num">10</span>
+                    </div>
+                    <h6>Süreç Otomasyonu ve Verimlilik</h6>
+                  </div>
+                  <div class="other-article-footer">
+                    <span class="read-status">Makaleyi Oku</span>
+                    <span class="fa fa-angle-right"></span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- Alt Bilgi (Footer) -->
+    <footer class="section section-fluid footer-minimal context-dark">
+      <div class="bg-gray-15">
+        <div class="container-fluid">
+          <div class="footer-minimal-bottom-panel text-sm-left">
+            <div class="row row-10 align-items-md-center">
+              <div class="col-sm-6 col-md-4 text-sm-right text-md-center">
+                <ul class="list-inline list-inline-sm footer-social-list-2">
+                  <li><a class="icon fa fa-linkedin" href="https://www.linkedin.com/in/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"></a></li>
+                  <li><a class="icon fa fa-twitter" href="https://x.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="X (Twitter)"></a></li>
+                  <li><a class="icon fa fa-youtube" href="https://www.youtube.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="YouTube"></a></li>
+                  <li><a class="icon fa fa-instagram" href="https://www.instagram.com/serhat.nehir" target="_blank" rel="noopener noreferrer" aria-label="Instagram"></a></li>
+                  <li><a class="icon fa fa-facebook" href="https://www.facebook.com/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="Facebook"></a></li>
+                  <li><a class="icon fa fa-telegram" href="https://t.me/serhatnehir" target="_blank" rel="noopener noreferrer" aria-label="Telegram"></a></li>
+                </ul>
+              </div>
+              <div class="col-sm-6 col-md-4 order-sm-first">
+                <p class="rights"><span>&copy;&nbsp;</span><span class="copyright-year">2026</span> <span>Serhat Nehir</span></p>
+              </div>
+              <div class="col-sm-6 col-md-4 text-md-right">
+                <span>Tüm hakları Saklıdır.</span> <span>Tasarım Serhat Nehir</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="../js/core.min.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,54 @@
+RewriteEngine On
+RewriteBase /
+
+# Dizin listelemeyi (Directory Listing) kesin olarak kapat (DirectorySlash Off güvenliği için zorunlu)
+Options -Indexes
+DirectorySlash Off
+
+# Hassas dosyalara (.htaccess, .git, .env vb.) doğrudan erişimi engelle
+<FilesMatch "^\.">
+  Require all denied
+</FilesMatch>
+
+# 1. Eski veya uzun adreslerle girilirse otomatik olarak yeni kısa adreslere yönlendir (301 SEO Yönlendirmesi)
+RewriteCond %{THE_REQUEST} \s/+projelerim/2xhizlioku(?:\.html|/index\.html|/?)[\s?] [NC]
+RewriteRule ^ /2xhizlioku [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+projelerim/10parmakhizliyaz(?:\.html|/index\.html|/?)[\s?] [NC]
+RewriteRule ^ /10parmakhizliyaz [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+projelerim/(?:osmanlica_egitim\.html|osmanlica(?:/index\.html|/?))[\s?] [NC]
+RewriteRule ^ /osmanlica_egitim [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+projelerim/videodesifre(?:\.html|/index\.html|/?)[\s?] [NC]
+RewriteRule ^ /videodesifre [R=301,L]
+
+RewriteCond %{THE_REQUEST} \s/+projelerim/ekitap(?:\.html|/index\.html|/?)[\s?] [NC]
+RewriteRule ^ /ekitap [R=301,L]
+
+# 2. Kısa adresler yazıldığında adres çubuğunu değiştirmeden ilgili index.html dosyasını aç
+RewriteRule ^2xhizlioku/?$ projelerim/2xhizlioku/index.html [L]
+RewriteRule ^10parmakhizliyaz/?$ projelerim/10parmakhizliyaz/index.html [L]
+RewriteRule ^osmanlica_egitim/?$ projelerim/osmanlica/index.html [L]
+RewriteRule ^videodesifre/?$ projelerim/videodesifre/index.html [L]
+RewriteRule ^ekitap/?$ projelerim/ekitap/index.html [L]
+
+# 3. HTTP Güvenlik Başlıkları (Security Headers)
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "geolocation=(), microphone=(), camera=()"
+  Header always set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" env=HTTPS
+</IfModule>
+
+# 4. Tarayıcı Önbellekleme (Browser Caching - Core Web Vitals)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/x-icon "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+</IfModule>
